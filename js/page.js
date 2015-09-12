@@ -53,6 +53,7 @@ function Page() {
         setTimeout(function () {
             self.touched = false;
         }, timeout);
+
     };
 
     // // MODALS
