@@ -1,4 +1,6 @@
 <?php
+
+
     require_once("php/header.php");
 	require_once("lang/en.php");
 ?>
