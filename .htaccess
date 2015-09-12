@@ -1,0 +1,40 @@
+ErrorDocument 404 /error/error404.php
+
+RewriteEngine On
+RewriteRule ^(.*)/([^.]+)/$ /$1/$2.html?rw=1 [QSA,L]
+RewriteCond %{QUERY_STRING} !^rw=1
+RewriteRule ^(.*)/([^.]+)\.html$ /$1/$2/ [R=301,L]
+RewriteCond %{THE_REQUEST} ^GET\s(.*/)index\.php [NC]
+RewriteRule . %1 [NE,R=301,L]
+RewriteCond %{THE_REQUEST} ^GET\s.+\.php [NC]
+RewriteRule ^(.+)\.php$ /$1 [NE,R=301,L,NC]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+RewriteRule ^(.*?)/?$ $1.php [L]
+RewriteCond %{HTTP_HOST} ^wordsearch-game.com
+RewriteRule ^(.*)$ http://www.wordsearch-game.com$1 [R=301,L]
+
+<FilesMatch ".(eot|ttf|otf|woff)">
+	Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month 1 hour"
+    ExpiresByType image/jpg "access plus 1 month 1 hour"
+    ExpiresByType image/jpeg "access plus 1 month 1 hour"
+    ExpiresByType image/png "access plus 1 month 1 hour"
+    ExpiresByType application/x-shockwave-flash "access plus 1 day 1 hour"
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/x-js text/javascript text/css
+    AddOutputFilterByType DEFLATE application/xml application/xhtml+xml application/x-javascript application/javascript application/json
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch ".(js|css|xml|gz|html|oft|woff2)$">
+    Header append Vary: Accept-Encoding
+  </FilesMatch>
+</IfModule>
