@@ -158,9 +158,9 @@ function Game(game, level, levelA, mob) {
     });
 
 
-
     function AI() {
         console.log(levelAI);
+        var wordCount = 0;
         var that = this;
         var AITimeouter = null;
         var ranger = [];
@@ -169,7 +169,7 @@ function Game(game, level, levelA, mob) {
         levelArrayAI['Easy'] = [15000, 30000]; // times in ms
         levelArrayAI['Middle'] = [10000, 20000]; // range when "he" find a word
         levelArrayAI['Hard'] = [5000, 15000];
-
+        // delays for level
         levelArray['Beginner'] = 0; // times in ms
         levelArray['Easy'] = 2000; // range when "he" find a word
         levelArray['Middle'] = 4000;
@@ -177,9 +177,6 @@ function Game(game, level, levelA, mob) {
         levelArray['Expert'] = 8000; // range when "he" find a word
         levelArray['Master'] = 10000;
         levelArray['Godlike'] = 12000;
-
-
-        var wordCount = 0;
 
         function setLevel() {
             ranger = levelArrayAI[levelAI];
@@ -190,18 +187,21 @@ function Game(game, level, levelA, mob) {
 
         function getWordNum() {
             wordCount = $(".wordlist").length;
-            console.log(wordCount);
         };
 
         function findWord() {
-            var word = wordCount-1;
-            wordCount--; // decrease
-            console.log(wordCount);
+            var wordValue =  $(".wordlist").eq(wordCount).text();
 
+            // create cases and output "Your enemy found word xy - x words to go"
+            // create div -> pos: absolute. left or right (mobile above) puzzle
+            switch(wordCount) {
+                // like if else if(wordCount == 5) -> five words to go
+            }
             if(wordCount == 0) {
                 that.stopAI();
                 self.finishGame("lost");
             };
+            wordCount--; // decrease  <-- num of words
         };
 
         function startAITimer() {
