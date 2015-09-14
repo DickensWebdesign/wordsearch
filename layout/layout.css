@@ -992,11 +992,13 @@ text-transform: none;
     top:0.33%;
     height: 99.5%;
     width:170px;
+    overflow:auto;
 }
 #game-left {
     position:absolute;
     left:0.5%;
     background-color: white;
+
 }
 #game-left img {
     position: relative;
@@ -1044,7 +1046,7 @@ text-transform: none;
     position: absolute;
     right:0.5%;
     float:right;
-    overflow:auto;
+
 }
 .show-time {
     color: white;
