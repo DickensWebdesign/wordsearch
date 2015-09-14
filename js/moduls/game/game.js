@@ -194,19 +194,56 @@ function Game(game, level, levelA, mob) {
         };
 
         function findWord() {
-            var wordValue =  $(".wordlist").eq(wordCount).text();
-            var word = wordCount-1;
-            wordCount--; // decrease
-            console.log(wordCount);
+            var wordValue =  $(".wordlist").eq(wordCount).text(); //
+            var wordsToGo = wordCount-1;
 
+            var AIStateOutput = [];
+            AIStateOutput[0] = "Ooooh the enemy found the word " + wordValue +" !"; //default
+            AIStateOutput[1] =  wordValue +" is solved! But not of you!";
+            AIStateOutput[2] =  "Damned " + wordValue + " found by enemy!";
+            AIStateOutput[3] =  "Enemy found a word " + wordsToGo +" to go!" ;
+
+            AInearLooseState = [];
+            AInearLooseState[0] = "Hurry! The enemy have only to find" + wordsToGo +" !"; // default
+            AInearLooseState[1] = "Hurry2! The enemy have only to find" + wordsToGo +" !";
+
+            console.log(wordCount + "----------- "+ wordValue);
+
+
+
+
+            // create random value to select different outputs
+
+
+            // errors : index PRoblem -sometimes found not the first wor
+
+            var output = $("#enemy-state-output");
+            var outputIndex = 0; // default
+            if(wordCount <= 2) {
+                outputIndex = Math.floor(Math.random() * 1)+1;
+                output.innerHTML = AInearLooseState[outputIndex];
+            } else {
+                outputIndex = Math.floor(Math.random() * 3)+1;
+                output.text(AIStateOutput[outputIndex]);
+            }
+            console.log(outputIndex);
+            console.log(AIStateOutput[outputIndex]);
+
+            // fade in message
+
+            // setTimeout -> fadeout message 2000 ms
+
+            // todo:
+            // div styling
+            // error fixing -> check eq() function .length value
+
+            /* this is end of game */
             if(wordCount == 0) {
                 that.stopAI();
                 self.finishGame("lost");
-                var div = document.createElement("div");
-                div.style.width = "200px";
-                div.position ="absolute";
-                div.innerHTML = "Your enemy found word ".wordValue;
+
             };
+            wordCount--; // decrease
         };
 
         function startAITimer() {

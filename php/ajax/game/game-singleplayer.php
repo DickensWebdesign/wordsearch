@@ -78,6 +78,7 @@ function output() {
             <img src = '<?php echo $_SESSION['root']; ?>img/icons/reload.png' class='restart close-game close-img' alt ='Restart' title = '<?php echo $check[1]; ?>' />
 
         </div>
+
         <p><span class="game-user-name"><img id="game-avatar" src="<?php echo $_SESSION['root']; ?>img/user/profile/<?php
         if(isset($_SESSION['user_picture']) && $_SESSION == true) {
             echo $_SESSION['user_name'];
@@ -94,6 +95,7 @@ function output() {
         <p id="errorbox"><?php echo $tbl_fields[5]; ?>0</p>
         </div>
         <div id='game-right'> <!-- show wordmenu in header when MOBILE -->
+
             <div class='wordbox'>
                 <?php
                 foreach ($wordsInMenu as $key => $val) {
@@ -103,6 +105,7 @@ function output() {
                 }
                 ?>
                 <div class='currentWordBox'></div>
+
             </div>
         </div>
     <?php }
@@ -115,6 +118,7 @@ function output() {
                 <img src="<?php echo $_SESSION['root']; ?>img/icons/stop-watch-icon.png" title="<?php echo $tbl_fields[4]; ?>" alt="Your time:"/>
                 <div id="errorbox"><?php echo $tbl_fields[5]; ?>0</div>
                 <hr/>
+        <div id="enemy-state-output" style="background-color: #47a8d8; z-index: 1000000; width: 200px; height: 200px;" ></div>
                 <div class="highscore-ingame-box">
                     <p><?php echo $check[3]; ?></p>
                     <?php
