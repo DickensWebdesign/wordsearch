@@ -198,13 +198,14 @@ function Game(game, level, levelA, mob) {
             var word = wordCount-1;
             wordCount--; // decrease
             console.log(wordCount);
-            var div = document.createElement("div");
-            div.style.width = "200px";
-            div.position ="absolute";
-            div.innerHTML = "Your enemy found word ".wordValue;
+
             if(wordCount == 0) {
                 that.stopAI();
                 self.finishGame("lost");
+                var div = document.createElement("div");
+                div.style.width = "200px";
+                div.position ="absolute";
+                div.innerHTML = "Your enemy found word ".wordValue;
             };
         };
 
