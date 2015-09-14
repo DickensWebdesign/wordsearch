@@ -1044,6 +1044,7 @@ text-transform: none;
     position: absolute;
     right:0.5%;
     float:right;
+    overflow:auto;
 }
 .show-time {
     color: white;
