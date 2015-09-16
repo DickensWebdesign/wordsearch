@@ -194,7 +194,7 @@ function Game(game, level, levelA, mob) {
         };
 
         function findWord() {
-            var wordValue =  $(".wordlist").eq(wordCount).text(); 
+            var wordValue =  $(".wordlist").eq(wordCount-1).text();
             var wordsToGo = wordCount-1;
 
             var AIStateOutput = [];
@@ -243,7 +243,12 @@ function Game(game, level, levelA, mob) {
                 self.finishGame("lost");
 
             };
-            wordCount--; // decrease
+            if(wordCount>=0) {
+                wordCount--; // decrease
+            }else {
+                that.stopAI();
+                self.finishGame("lost");
+            }
         };
 
         function startAITimer() {
