@@ -256,7 +256,10 @@ function Game(game, level, levelA, mob) {
             AITimeouter = setTimeout(function() {
                 console.log(AITimeout);
                 console.log("Your Enemy found a word");
-                findWord();
+                if(wordCount>0)
+                    findWord();
+                else
+                    this.stopAI();
                 console.log('Word found by AI');
                 // repeat THIS function
                 startAITimer();
