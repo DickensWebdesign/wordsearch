@@ -189,12 +189,12 @@ function Game(game, level, levelA, mob) {
         };
 
         function getWordNum() {
-            wordCount = $(".wordlist").length;
+            wordCount = $(".wordlist").length; // will have the value 12 at easy and 15 <--- num
             console.log(wordCount);
         };
 
         function findWord() {
-            var wordValue =  $(".wordlist").eq(wordCount-1).text();
+            var wordValue =  $("#"+wordCount).text();
             var wordsToGo = wordCount-1;
 
             var AIStateOutput = [];
@@ -219,7 +219,7 @@ function Game(game, level, levelA, mob) {
 
             var output = $("#enemy-state-output");
             var outputIndex = 0; // default
-            if(wordCount <= 2) {
+            if(wordCount <= 3) {
                 outputIndex = Math.floor(Math.random() * 1)+1;
                 output.innerHTML = AInearLooseState[outputIndex];
             } else {
@@ -228,27 +228,23 @@ function Game(game, level, levelA, mob) {
             }
             console.log(outputIndex);
             console.log(AIStateOutput[outputIndex]);
-
-            // fade in message
-
-            // setTimeout -> fadeout message 2000 ms
-
             // todo:
             // div styling
-            // error fixing -> check eq() function .length value
 
-            /* this is end of game */
-            if(wordCount == 0) {
-                that.stopAI();
-                self.finishGame("lost");
+            if(wordCount > 1) {
 
-            };
-            if(wordCount>=0) {
+                // ++ code here
+
+                // calling seperated fader functions
+                // fade in message
+                // setTimeout -> fadeout message 2000 ms
                 wordCount--; // decrease
-            }else {
+            } else {
                 that.stopAI();
                 self.finishGame("lost");
             }
+
+
         };
 
         function startAITimer() {
@@ -256,13 +252,10 @@ function Game(game, level, levelA, mob) {
             AITimeouter = setTimeout(function() {
                 console.log(AITimeout);
                 console.log("Your Enemy found a word");
-                if(wordCount>0)
+                if(wordCount > 1) {
                     findWord();
-                else
-                    this.stopAI();
-                console.log('Word found by AI');
-                // repeat THIS function
-                startAITimer();
+                    startAITimer();
+                }
             }, AITimeout)
         };
 

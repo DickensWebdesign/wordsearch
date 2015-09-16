@@ -100,12 +100,12 @@ function output() {
                 <?php
                 foreach ($wordsInMenu as $key => $val) {
                     if ($val != "") {
-                        echo "<p class='wordlist' id='" . $key . "'>" . $val . "</p>";
+                        $valId = $key+1;
+                        echo "<p class='wordlist' id='" . $valId  . "'>" . $val . "</p>";
                     }
                 }
                 ?>
                 <div class='currentWordBox'></div>
-
             </div>
         </div>
     <?php }
@@ -192,7 +192,8 @@ function output() {
         echo "<div class='wordbox'>";
         foreach ($wordsInMenu as $key => $val) {
             if ($val != "") {
-                echo "<p class='wordlist' id='" . $key . "'>" . $val . "</p>";
+                $valId = $key+1;
+                echo "<p class='wordlist' id='" . $valId . "'>" . $val . "</p>";
             }
         }
         echo "<div class='currentWordBox'></div>";
