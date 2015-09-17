@@ -62,7 +62,7 @@ function output() {
             <input type='button' class='final-result opener' value='continue'/>
         </div>
         <div id="ai-final-menu">
-        <input type='button' class='restart close-game user-button' value='restart'/>
+            <input type='button' class='restart close-game user-button' value='restart'/>
             <input type='button' class='front close-game user-button3' value='close'/>
         </div>
     </div>
@@ -95,7 +95,6 @@ function output() {
         <p id="errorbox"><?php echo $tbl_fields[5]; ?>0</p>
         </div>
         <div id='game-right'> <!-- show wordmenu in header when MOBILE -->
-
             <div class='wordbox'>
                 <?php
                 foreach ($wordsInMenu as $key => $val) {
@@ -105,7 +104,6 @@ function output() {
                     }
                 }
                 ?>
-                <div class='currentWordBox'></div>
             </div>
         </div>
     <?php }
@@ -118,7 +116,6 @@ function output() {
                 <img src="<?php echo $_SESSION['root']; ?>img/icons/stop-watch-icon.png" title="<?php echo $tbl_fields[4]; ?>" alt="Your time:"/>
                 <div id="errorbox"><?php echo $tbl_fields[5]; ?>0</div>
                 <hr/>
-        <div id="enemy-state-output" style="background-color: #47a8d8; z-index: 1000000; width: 200px; height: 200px;" ></div>
                 <div class="highscore-ingame-box">
                     <p><?php echo $check[3]; ?></p>
                     <?php
@@ -150,70 +147,65 @@ function output() {
                     } else {
                         echo '<p>' . $singleplayer[1] .'</p>';
                     }
-                    ?>
-                </div>
-        <?php }
-        echo '</div><div id="game-center">';
-	    echo "<table>";
-        $letterId = 0;
-		for ($r=0; $r<$rows; $r++) {
-		// building rows
-		echo "<tr";
-        if ($r == 0) {
-            echo ' id="row-first" ';
-        }
-		echo ">";
-
-		for ($c=0; $c<$columns; $c++)
-		{
-			echo "<td class='white'";
-			if ($usedFields[$r][$c] == true)
-			{
-				echo  "data-id='".$wordNum[$r][$c]."'";
-			}
-			else
-			{
-				echo  "data-id='9999'";
-			}
-			echo " id='L".$letterId."'>";
-			echo "<span class='letter'>".$fields[$r][$c]."</span>";
-			echo "</td>\r";
-            $letterId++;
-		}
-		echo "</tr>\r";
-	}
-	echo "</table></div>";
-
-    /* game-right */
-    if($_SESSION['mobile'] == false) {
-        asort($wordsInMenu); // OUTPUT -> Menu sorting array from a to z
-        echo "<div id='game-right'>";
-        echo "<H2 class='menuHeadline wordheader'>". $form_button_value[11] ."</H2><hr />";
-        echo "<div class='wordbox'>";
-        foreach ($wordsInMenu as $key => $val) {
-            if ($val != "") {
-                $valId = $key+1;
-                echo "<p class='wordlist' id='" . $valId . "'>" . $val . "</p>";
+                echo '</div>';
+                }
+            echo '</div><div id="game-center">';
+            echo "<table>";
+            $letterId = 0;
+            for ($r=0; $r<$rows; $r++) {
+            // building rows
+            echo "<tr";
+            if ($r == 0) {
+                echo ' id="row-first" ';
             }
-        }
-        echo "<div class='currentWordBox'></div>";
+            echo ">";
 
-        echo "</div>";
-        if ($_SESSION['level'] == 'Expert' || $_SESSION['level'] == 'Master' || $_SESSION['level'] == 'Godlike') {
-            echo "</div>";
-            echo "</div>";
+            for ($c=0; $c<$columns; $c++)
+            {
+                echo "<td class='white'";
+                if ($usedFields[$r][$c] == true)
+                {
+                    echo  "data-id='".$wordNum[$r][$c]."'";
+                }
+                else
+                {
+                    echo  "data-id='9999'";
+                }
+                echo " id='L".$letterId."'>";
+                echo "<span class='letter'>".$fields[$r][$c]."</span>";
+                echo "</td>\r";
+                $letterId++;
+            }
+            echo "</tr>\r";
         }
+        echo "</table></div>";
 
-        if ($_SESSION['level'] == 'Expert' || $_SESSION['level'] == 'Master' || $_SESSION['level'] == 'Godlike') {
+        /* game-right */
+        if($_SESSION['mobile'] == false) {
+            asort($wordsInMenu); // OUTPUT -> Menu sorting array from a to z
+            echo "<div id='game-right'>";
+            echo "<H2 class='menuHeadline wordheader'>". $form_button_value[11] ."</H2><hr />";
+            echo "<div class='wordbox'>";
+            foreach ($wordsInMenu as $key => $val) {
+                if ($val != "") {
+                    $valId = $key+1;
+                    echo "<p class='wordlist' id='" . $valId . "'>" . $val . "</p>";
+                }
+            }
+            echo "<div class='currentWordBox'></div>";
             echo "</div>";
-        }
-    }
-        ?>
-        </div>
-        </div>
-        </div>
-        </div>
+            if ($_SESSION['level'] == 'Expert' || $_SESSION['level'] == 'Master' || $_SESSION['level'] == 'Godlike') {
+                echo "</div>";
+                echo "</div>";
+            }
 
+            if ($_SESSION['level'] == 'Expert' || $_SESSION['level'] == 'Master' || $_SESSION['level'] == 'Godlike') {
+                echo "</div>";
+            }
+        } ?>
+        </div>
+                <div id="enemy-state-output"></div>
+        </div>
     <?php
 }
 function set_gamesettings(){

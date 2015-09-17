@@ -196,77 +196,70 @@ function Game(game, level, levelA, mob) {
         function findWord() {
             var wordValue =  $("#"+wordCount).text();
             var wordsToGo = wordCount-1;
-
+            var output = $("#enemy-state-output");
+            var outputIndex = 1;
             var AIStateOutput = [];
-            AIStateOutput[0] = "Ooooh the enemy found the word " + wordValue +" !"; //default
-            AIStateOutput[1] =  wordValue +" is solved! But not of you!";
-            AIStateOutput[2] =  "Damned " + wordValue + " found by enemy!";
-            AIStateOutput[3] =  "Enemy found a word " + wordsToGo +" to go!" ;
+            var AInearLooseState = [];
 
-            AInearLooseState = [];
-            AInearLooseState[0] = "Hurry! The enemy have only to find" + wordsToGo +" !"; // default
-            AInearLooseState[1] = "Hurry2! The enemy have only to find" + wordsToGo +" !";
+            AIStateOutput[1] = "Ooooh the enemy found the word " + wordValue +" !"; //default
+            AIStateOutput[2] =  wordValue +" is solved! But not of you!";
+            AIStateOutput[3] =  "Damned " + wordValue + " found by enemy!";
+            AIStateOutput[4] =  "Enemy found a word " + wordsToGo +" to go!" ;
+            AInearLooseState[1] = "Hurry! The enemy have only to find" + wordsToGo +" !"; // default
+            AInearLooseState[2] = "Hurry2! The enemy have only to find" + wordsToGo +" !";
 
             console.log(wordCount + "----------- "+ wordValue);
 
-
-
-
-            // create random value to select different outputs
-
-
-            // errors : index PRoblem -sometimes found not the first wor
-
-            var output = $("#enemy-state-output");
-            var outputIndex = 0; // default
             if(wordCount <= 3) {
                 outputIndex = Math.floor(Math.random() * 1)+1;
-                output.innerHTML = AInearLooseState[outputIndex];
+                output.text(AInearLooseState[outputIndex]);
             } else {
-                outputIndex = Math.floor(Math.random() * 3)+1;
+                outputIndex = Math.floor(Math.random() * 4)+1;
                 output.text(AIStateOutput[outputIndex]);
             }
             console.log(outputIndex);
             console.log(AIStateOutput[outputIndex]);
             // todo:
             // div styling
-
-            if(wordCount > 1) {
-
+            if(wordCount > 0) {
                 // ++ code here
-
                 // calling seperated fader functions
                 // fade in message
                 // setTimeout -> fadeout message 2000 ms
                 wordCount--; // decrease
-            } else {
+            }
+            if(wordCount == 0) {
                 that.stopAI();
                 self.finishGame("lost");
+                wordCount = null;
             }
-
-
         };
 
+        var finished = false;
+
         function startAITimer() {
-            var AITimeout = Math.random() * (ranger[1] - ranger[0]) + ranger[0];
-            AITimeouter = setTimeout(function() {
-                console.log(AITimeout);
-                console.log("Your Enemy found a word");
-                if(wordCount > 1) {
-                    findWord();
-                    startAITimer();
-                }
-            }, AITimeout)
+            if(finished == false) {
+                var AITimeout = Math.random() * (ranger[1] - ranger[0]) + ranger[0];
+                AITimeouter = setTimeout(function () {
+                    console.log(AITimeout);
+                    console.log("Your Enemy found a word");
+                    if (wordCount > 0) {
+                        findWord();
+                        startAITimer();
+                    }
+                }, AITimeout);
+            }
         };
 
         this.stopAI = function() {
-            clearTimeout(AITimeouter)
+            clearTimeout(AITimeouter);
+            finished = true;
         };
 
         this.initAI = function() {
             setLevel(levelAI);
             getWordNum();
-            startAITimer();
+            setTimeout( function() { startAITimer(); },50);
             console.log("AI inititialisiert");
         };
 

@@ -939,6 +939,17 @@ text-transform: none;
     z-index:10000;
     border: solid thin gray;
 }
+#enemy-state-output {
+    position:absolute;
+    background-color: #47a8d8;
+    z-index: 1000000;
+    width: 200px;
+    height: 50px;
+    right: -10%;
+    top: 50%;
+}
+
+
 #normal-final-menu, #ai-final-menu {
     display: none;
 }
