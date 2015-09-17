@@ -238,17 +238,18 @@ function Game(game, level, levelA, mob) {
         var finished = false;
 
         function startAITimer() {
-            if(finished == false) {
-                var AITimeout = Math.random() * (ranger[1] - ranger[0]) + ranger[0];
-                AITimeouter = setTimeout(function () {
-                    console.log(AITimeout);
-                    console.log("Your Enemy found a word");
+            var AITimeout = Math.random() * (ranger[1] - ranger[0]) + ranger[0];
+            AITimeouter = setTimeout(function () {
+                if(finished == false) {
                     if (wordCount > 0) {
                         findWord();
                         startAITimer();
                     }
-                }, AITimeout);
-            }
+                } else {
+                    AITimeouter = null;
+                    return false;
+                }
+            }, AITimeout);
         };
 
         this.stopAI = function() {
@@ -260,9 +261,7 @@ function Game(game, level, levelA, mob) {
             setLevel(levelAI);
             getWordNum();
             setTimeout( function() { startAITimer(); },50);
-            console.log("AI inititialisiert");
         };
-
         // init
         this.initAI();
     }
