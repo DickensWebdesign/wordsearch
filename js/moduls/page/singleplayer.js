@@ -30,7 +30,6 @@ function Highscore(mob) {
         highscores[0] = "Easy";
         highscores[1] = "Middle";
         highscores[2] = "Hard";
-
     }
 
     this.highscoreDown = function () {

@@ -57,11 +57,8 @@ function Game(game, level, levelA, mob) {
 
 
 
-    this.setTouchOut = function(time){
+    this.setTouchOut = function(){
         var timeout = 100;
-        if(arguments.length > 0) {
-            timeout = time;
-        }
         setTimeout(function() {
             touched = false;
         }, timeout);
@@ -328,9 +325,7 @@ function Game(game, level, levelA, mob) {
 
     //// GAME ENGINE
     this.initGame = function() {
-        if(touched == false) {
-            touched = true;
-            self.setTouchOut(1000);
+            self.setTouchOut();
             setTimeout(function () {
                 if (mobile == "1") {
                     selector = ":first";
@@ -352,6 +347,7 @@ function Game(game, level, levelA, mob) {
                         window.location.reload();
                     }
                 }).done(function () {
+                    console.log();
                     self.initGameField();
                     setTimeout(function () {
                         outerFrame.css({display: "block"}).animate({opacity: 1}, 100);
@@ -360,7 +356,7 @@ function Game(game, level, levelA, mob) {
                 });
                 return false;
             }, 300);
-        }
+
     };
 
     // INIT GAME FIELD
@@ -423,12 +419,10 @@ function Game(game, level, levelA, mob) {
 
     $(document).on("click" || "touchstart ", ".close-game", function (e) {
         e.preventDefault();
-        if(aI != null) {
-            aI.stopAI();
-        }
+
         if(touched == false) {
             touched = true;
-            self.setTouchOut(100);
+            self.setTouchOut();
             var contentWrapper = $("#content-wrapper");
             var pageMenu = $("#menu-left");
             action = $(this).attr("class").split(" ").shift();
@@ -792,11 +786,13 @@ function Game(game, level, levelA, mob) {
         }
     };
 
-    var aI = null;
+    var ai = null;
     // INIT
     // INIT RESIZE GAME
-
-    self.initGame();
+    if(touched == false) {
+        touched = true;
+        self.initGame();
+    }
     $(window).resize(function () {
         self.resizeGame()
     });
