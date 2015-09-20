@@ -217,7 +217,7 @@ require_once("../lang/en.php"); ?>
                         $index = 1;
                         $in = false;
                         foreach($userTop100Mobile as $key => $value) {
-                            if($value['user-level'] == $levVal && $index <= 10) {
+                            if($value['user_level'] == $levVal && $index <= 10) {
                                 if($index == 1) {
                                     echo ' <table class="pers-high"><tbody><tr class="tr-under"><td>'. $pershigh[9] .'</td><td>'. $pershigh[10] .'</td><td>'. $pershigh[11] .'</td><td>'. $pershigh[12] .'</td></tr>';
                                 }

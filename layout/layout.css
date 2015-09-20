@@ -585,6 +585,9 @@ padding-top: 70px;
 padding-bottom: 29px;
 color:#000;
 }
+#animate-text {
+    text-align: left;
+}
 .content-menu, .content-menu2 {
 position:relative;
 float:right;

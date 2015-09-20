@@ -177,7 +177,7 @@ $(document).ready(function() {
     new Highscore(page.getMobile());
     page.activateHashAction();
 
-    startAnimation();
+    /* startAnimation(); */
     function startAnimation() {
         $('#animate-text').animate({left: '90'},{easing: 'swing',duration: 5000});
         $('img.witch').fadeOut(5000, function() {

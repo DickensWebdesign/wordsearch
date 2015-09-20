@@ -115,8 +115,6 @@
             <ul>
                 <li><a href="#show-highscore" class="highscore"><?php echo $highscore[0];?></a></li>
                 <?php } else { ?>
-            <!-- if we select here a value (easy, middle, hard etc... we can take this value and an use it as (imaginary) ->level puzzle: easy -->
-        <!--- menu to choose puzzlesize -->
                     <li><a href="#level-beginner-browser" class="Beginner level" title="<?php echo $level_title[0];?>">10 x 10</a></li>
                     <li><a href="#level-easy-browser" class="Easy level" title="<?php echo $level_title[1];?>"><?php echo $level[1];?></a></li>
                     <li><a href="#level-middle-browser" class="Middle level"  title="<?php echo $level_title[2];?>"><?php echo $level[2];?></a></li>
@@ -222,12 +220,7 @@
                     <div class="rules-box">
                         <h1 class="content-header"><?php echo $game[5] .'<br>'. $game[7]; ?></h1>
                         <ul class="ul-gamerules">
-                            <div><img src="<?php echo $_SESSION['root']; ?>img/content/witch.png" alt="<?php echo  $game[7]; ?>" title="<?php echo  $game[7]; ?>" class="Rules witch" /></div>
-                            <li><?php echo $game[8]; ?>
-                                <div><img src="<?php echo $_SESSION['root']; ?>img/content/devil.gif" alt="<?php echo  $game[7]; ?>" title="<?php echo  $game[7]; ?>" class="Rules devil" /></div>
-                                <div><img src="<?php echo $_SESSION['root']; ?>img/content/bird.gif" alt="<?php echo  $game[7]; ?>" title="<?php echo  $game[7]; ?>" class="Rules bird" /></div>
-
-                            </li>
+                            <li><?php echo $game[8]; ?></li>
                             <li><?php echo $game[9]; ?></li>
                              <li><?php echo $game[10]; ?></li>
                             <li><?php echo $game[11]; ?></li>
