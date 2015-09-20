@@ -180,7 +180,7 @@ $(document).ready(function() {
 
     startAnimation();
     function startAnimation() {
-        $('.content-header-ultra-one').animate({left: '90'},{easing: 'swing',duration: 5000});
+        $('#animate-text').animate({left: '90'},{easing: 'swing',duration: 5000});
         $('img.witch').fadeOut(5000, function() {
             $('img.witch').attr("src","http://www.wordsearch-game.com/img/content/witch2.png");
             $('img.witch').fadeIn(7000,function(){

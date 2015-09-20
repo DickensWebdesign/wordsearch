@@ -8,9 +8,7 @@ function Game(game, level, levelA, mob) {
     var levelId = level;
     var touched = false;
     var self = this;
-
     var action = null;
-
     var startModal = $("#game-start-wrapper");
     var outerFrame = $("#main-content");
     var gameWrapper = null;
@@ -46,7 +44,6 @@ function Game(game, level, levelA, mob) {
     var finalEntryFrame = null;
     var foundedWords = 0;
     var currentLetter = null;
-
     var errorHandler = new ErrorHandler();
     var randomSolver = new RandomSolver();
     var clock = new Clock();
@@ -58,8 +55,13 @@ function Game(game, level, levelA, mob) {
         }
     });
 
-    this.setTouchOut = function(){
+
+
+    this.setTouchOut = function(time){
         var timeout = 100;
+        if(arguments.length > 0) {
+            timeout = time;
+        }
         setTimeout(function() {
             touched = false;
         }, timeout);
@@ -189,14 +191,15 @@ function Game(game, level, levelA, mob) {
         };
 
         function getWordNum() {
-            wordCount = $(".wordlist").length; // will have the value 12 at easy and 15 <--- num
+            wordCount = $(".wordlist").length;
             console.log(wordCount);
         };
+
+        var outputInner = $("#enemy-inner-content");
 
         function findWord() {
             var wordValue =  $("#"+wordCount).text();
             var wordsToGo = wordCount-1;
-            var output = $("#enemy-state-output");
             var outputIndex = 1;
             var AIStateOutput = [];
             var AInearLooseState = [];
@@ -208,25 +211,16 @@ function Game(game, level, levelA, mob) {
             AInearLooseState[1] = "Hurry! The enemy have only to find" + wordsToGo +" !"; // default
             AInearLooseState[2] = "Hurry2! The enemy have only to find" + wordsToGo +" !";
 
-            console.log(wordCount + "----------- "+ wordValue);
-
             if(wordCount <= 3) {
                 outputIndex = Math.floor(Math.random() * 1)+1;
-                output.text(AInearLooseState[outputIndex]);
+                outputInner.text(AInearLooseState[outputIndex]);
             } else {
                 outputIndex = Math.floor(Math.random() * 4)+1;
-                output.text(AIStateOutput[outputIndex]);
+                outputInner.text(AIStateOutput[outputIndex]);
             }
-            console.log(outputIndex);
-            console.log(AIStateOutput[outputIndex]);
-            // todo:
-            // div styling
             if(wordCount > 0) {
-                // ++ code here
-                // calling seperated fader functions
-                // fade in message
-                // setTimeout -> fadeout message 2000 ms
-                wordCount--; // decrease
+                showMessage();
+                wordCount--;
             }
             if(wordCount == 0) {
                 that.stopAI();
@@ -235,8 +229,15 @@ function Game(game, level, levelA, mob) {
             }
         };
 
-        var finished = false;
+        function showMessage() {
+            outputInner.animate({"opacity": 1},100, function() {
+                setTimeout(function() {
+                    outputInner.animate({"opacity": 0},100);
+                }, 3000);
+            });
+        }
 
+        var finished = false;
         function startAITimer() {
             var AITimeout = Math.random() * (ranger[1] - ranger[0]) + ranger[0];
             AITimeouter = setTimeout(function () {
@@ -327,35 +328,39 @@ function Game(game, level, levelA, mob) {
 
     //// GAME ENGINE
     this.initGame = function() {
-        setTimeout(function() {
-            if(mobile == "1") {
-                selector = ":first";
-            }
-            var url = AJAX_ROOT + "game/game-singleplayer.php";
-            console.log(levelId);
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: {id: levelId},
-                success: function (field) {
-                    outerFrame.append(field);
-                    secLevel.animate({opacity: 0}, 200, function() {
-                        secLevel.css({display: "none"});
-                    });
-                },
-                error: function () {
-                    confirm("Loading-Error: System could not create game!\n\n Please try later again!");
-                    window.location.reload();
+        if(touched == false) {
+            touched = true;
+            self.setTouchOut(1000);
+            setTimeout(function () {
+                if (mobile == "1") {
+                    selector = ":first";
                 }
-            }).done(function() {
-                self.initGameField();
-                setTimeout(function() {
-                    outerFrame.css({display: "block" }).animate({opacity: 1}, 100);
-                }, 1000);
-                startModal.css({display: "block"}).animate({opacity: 1}, 600);
-            });
-            return false;
-        }, 300);
+                var url = AJAX_ROOT + "game/game-singleplayer.php";
+
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: {id: levelId},
+                    success: function (field) {
+                        outerFrame.append(field);
+                        secLevel.animate({opacity: 0}, 200, function () {
+                            secLevel.css({display: "none"});
+                        });
+                    },
+                    error: function () {
+                        confirm("Loading-Error: System could not create game!\n\n Please try later again!");
+                        window.location.reload();
+                    }
+                }).done(function () {
+                    self.initGameField();
+                    setTimeout(function () {
+                        outerFrame.css({display: "block"}).animate({opacity: 1}, 100);
+                    }, 1000);
+                    startModal.css({display: "block"}).animate({opacity: 1}, 600);
+                });
+                return false;
+            }, 300);
+        }
     };
 
     // INIT GAME FIELD
@@ -366,6 +371,7 @@ function Game(game, level, levelA, mob) {
         if(mobile == "1") {
             levelId = levelArrayMob[level];
         }
+        console.log("+" + levelAI);
         uiLevel.html(levelId);
         if(levelAI != 0) {
             uiMode.html("AI:"+ levelAI);
@@ -417,6 +423,9 @@ function Game(game, level, levelA, mob) {
 
     $(document).on("click" || "touchstart ", ".close-game", function (e) {
         e.preventDefault();
+        if(aI != null) {
+            aI.stopAI();
+        }
         if(touched == false) {
             touched = true;
             self.setTouchOut(100);
@@ -660,6 +669,10 @@ function Game(game, level, levelA, mob) {
 
     this.setLevel = function(id) {
         levelId = id;
+    };
+
+    this.setLevelAI = function(ai) {
+        levelAI = ai;
     };
 
     this.resetVars = function() {

@@ -166,9 +166,7 @@ function output() {
                 if ($usedFields[$r][$c] == true)
                 {
                     echo  "data-id='".$wordNum[$r][$c]."'";
-                }
-                else
-                {
+                } else {
                     echo  "data-id='9999'";
                 }
                 echo " id='L".$letterId."'>";
@@ -184,27 +182,24 @@ function output() {
         if($_SESSION['mobile'] == false) {
             asort($wordsInMenu); // OUTPUT -> Menu sorting array from a to z
             echo "<div id='game-right'>";
-            echo "<H2 class='menuHeadline wordheader'>". $form_button_value[11] ."</H2><hr />";
+            echo "<H2 class='menuHeadline wordheader'>" . $form_button_value[11] . "</H2><hr />";
             echo "<div class='wordbox'>";
             foreach ($wordsInMenu as $key => $val) {
                 if ($val != "") {
-                    $valId = $key+1;
+                    $valId = $key + 1;
                     echo "<p class='wordlist' id='" . $valId . "'>" . $val . "</p>";
                 }
             }
-            echo "<div class='currentWordBox'></div>";
             echo "</div>";
             if ($_SESSION['level'] == 'Expert' || $_SESSION['level'] == 'Master' || $_SESSION['level'] == 'Godlike') {
                 echo "</div>";
-                echo "</div>";
             }
-
-            if ($_SESSION['level'] == 'Expert' || $_SESSION['level'] == 'Master' || $_SESSION['level'] == 'Godlike') {
-                echo "</div>";
-            }
-        } ?>
+        }?>
         </div>
-                <div id="enemy-state-output"></div>
+                <div id="enemy-state-output"><div id="enemy-inner-content"></div></div>
+         <?php       if ($_SESSION['level'] == 'Expert' || $_SESSION['level'] == 'Master' || $_SESSION['level'] == 'Godlike') {
+                echo "</div>";
+        } ?>
         </div>
     <?php
 }
@@ -1345,18 +1340,20 @@ function set_word ($rows, $columns, $word)
 		if($direction == 0)
 		{
 			for ($posX = $posStart; $posX<=$posEnd; $posX++)
-			{									
-					
+			{
+
 				$fields[$posY][$posX] = $words[$word][$letterPos];
 				$usedFields[$posY][$posX] = true;		// here we set the field to true 
-				$fullWords .= $words[$word][$letterPos]; 
-				if (isset($wordNum[$posY][$posX]))
-				{				
-					$wordNum[$posY][$posX] .= ", ".$word;
+				$fullWords .= $words[$word][$letterPos];
+                $idd = $word+1;
+                if (isset($wordNum[$posY][$posX]))
+				{
+
+					$wordNum[$posY][$posX] .= ", ".$idd;
 				}
 				else
 				{
-					$wordNum[$posY][$posX] = $word;
+					$wordNum[$posY][$posX] = $idd;
 				}
 				$letterPos++;
 			}
@@ -1368,14 +1365,15 @@ function set_word ($rows, $columns, $word)
 			{											
 				$fields[$posY][$posX] = $words[$word][$letterPos];
 				$usedFields[$posY][$posX] = true;		// here we set the field to true 
-				$fullWords .= $words[$word][$letterPos]; 
+				$fullWords .= $words[$word][$letterPos];
+                $idd = $word+1;
 				if (isset($wordNum[$posY][$posX]))
 				{				
-					$wordNum[$posY][$posX] .= ", ".$word;
+					$wordNum[$posY][$posX] .= ", ".$idd;
 				}
 				else
 				{
-					$wordNum[$posY][$posX] = $word;
+					$wordNum[$posY][$posX] = $idd;
 				}
 				$letterPos++;
 			}
@@ -1391,13 +1389,14 @@ function set_word ($rows, $columns, $word)
 				$fields[$posY][$posX] = $words[$word][$letterPos];						
 				$usedFields[$posY][$posX] = true;
 				$fullWords .= $words[$word][$letterPos];
-				if (isset($wordNum[$posY][$posX]))
+                $idd = $word+1;
+                if (isset($wordNum[$posY][$posX]))
 				{				
-					$wordNum[$posY][$posX] .= ", ".$word;
+					$wordNum[$posY][$posX] .= ", ".$idd;
 				}
 				else
 				{
-					$wordNum[$posY][$posX] = $word;
+					$wordNum[$posY][$posX] = $idd;
 				}
 					
 				$letterPos++;	
@@ -1411,13 +1410,14 @@ function set_word ($rows, $columns, $word)
 				$fields[$posY][$posX] = $words[$word][$letterPos];						
 				$usedFields[$posY][$posX] = true;
 				$fullWords .= $words[$word][$letterPos];
+                $idd = $word+1;
 				if (isset($wordNum[$posY][$posX]))
 				{				
-					$wordNum[$posY][$posX] .= ", ".$word;
+					$wordNum[$posY][$posX] .= ", ".$idd;
 				}
 				else
 				{
-					$wordNum[$posY][$posX] = $word;
+					$wordNum[$posY][$posX] = $idd;
 				}
 					
 				$letterPos++;	
@@ -1431,14 +1431,15 @@ function set_word ($rows, $columns, $word)
 		{											
 			$fields[$posY][$posX] = $words[$word][$letterPos];
 			$usedFields[$posY][$posX] = true;		// here we set the field to true 
-			$fullWords .= $words[$word][$letterPos]; 
-			if (isset($wordNum[$posY][$posX]))
+			$fullWords .= $words[$word][$letterPos];
+            $idd = $word+1;
+            if (isset($wordNum[$posY][$posX]))
 			{				
-				$wordNum[$posY][$posX] .= ", ".$word;
+				$wordNum[$posY][$posX] .= ", ".$idd;
 			}
 			else
 			{
-				$wordNum[$posY][$posX] = $word;
+				$wordNum[$posY][$posX] = $idd;
 			}
 			$letterPos++;
 			$posY++;	
@@ -1451,14 +1452,15 @@ function set_word ($rows, $columns, $word)
 		{											
 			$fields[$posY][$posX] = $words[$word][$letterPos];
 			$usedFields[$posY][$posX] = true;		// here we set the field to true 
-			$fullWords .= $words[$word][$letterPos]; 
-			if (isset($wordNum[$posY][$posX]))
+			$fullWords .= $words[$word][$letterPos];
+            $idd = $word+1;
+            if (isset($wordNum[$posY][$posX]))
 			{				
-				$wordNum[$posY][$posX] .= ", ".$word;
+				$wordNum[$posY][$posX] .= ", ".$idd;
 			}
 			else
 			{
-				$wordNum[$posY][$posX] = $word;
+				$wordNum[$posY][$posX] = $idd;
 			}
 			$letterPos++;
 			$posY--;	
@@ -1471,14 +1473,15 @@ function set_word ($rows, $columns, $word)
 		{											
 			$fields[$posY][$posX] = $words[$word][$letterPos];
 			$usedFields[$posY][$posX] = true;		// here we set the field to true 
-			$fullWords .= $words[$word][$letterPos]; 
-			if (isset($wordNum[$posY][$posX]))
+			$fullWords .= $words[$word][$letterPos];
+            $idd = $word+1;
+            if (isset($wordNum[$posY][$posX]))
 			{				
-				$wordNum[$posY][$posX] .= ", ".$word;
+				$wordNum[$posY][$posX] .= ", ".$idd;
 			}
 			else
 			{
-				$wordNum[$posY][$posX] = $word;
+				$wordNum[$posY][$posX] = $idd;
 			}
 			$letterPos++;
 			$posY--;	
@@ -1491,14 +1494,15 @@ function set_word ($rows, $columns, $word)
 		{											
 			$fields[$posY][$posX] = $words[$word][$letterPos];
 			$usedFields[$posY][$posX] = true;		// here we set the field to true 
-			$fullWords .= $words[$word][$letterPos]; 
-			if (isset($wordNum[$posY][$posX]))
+			$fullWords .= $words[$word][$letterPos];
+            $idd = $word+1;
+            if (isset($wordNum[$posY][$posX]))
 			{				
-				$wordNum[$posY][$posX] .= ", ".$word;
+				$wordNum[$posY][$posX] .= ", ".$idd;
 			}
 			else
 			{
-				$wordNum[$posY][$posX] = $word;
+				$wordNum[$posY][$posX] = $idd;
 			}
 			$letterPos++;
 			$posY++;

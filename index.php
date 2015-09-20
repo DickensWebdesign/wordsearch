@@ -234,7 +234,7 @@
                             <li><?php echo $game[12]; ?></li>
                             <li><?php echo $game[13]; ?></li>
                         </ul>
-                        <h3 class="content-header-ultra-one"><?php echo $game[14]; ?></h3>
+                        <h3 class="content-header-ultra-one" id="animate-text"><?php echo $game[14]; ?></h3>
                         <div class="content-menu-wrapper">
                             <?php
                             $link = "browser";

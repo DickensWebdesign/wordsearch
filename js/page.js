@@ -296,6 +296,7 @@ function Page() {
                 gm = new Game(gameId, levelId, levelAI, mobile);
             } else {
                 gm.setLevel(levelId);
+                gm.setLevelAI(levelAI);
                 gm.initGame();
             }
             e.stopPropagation();
