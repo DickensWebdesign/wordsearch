@@ -49,6 +49,7 @@
     ga('send', 'pageview');
 </script>
 <div id="main-content-wrapper">
+
     <div id="page-head">
         <div id="headline">
             <?php
@@ -117,6 +118,8 @@
         </div>
         <?php } ?>
         <div id="content-wrapper">
+           <div id="content-header"></div>
+            <div id="content-image">
             <?php if($_SESSION['mobile'] == true) { ?>
     <div class="last-menu">
         <p class="content-menu2 green-color"><?php echo $menu_right[2]; ?></p>
@@ -224,6 +227,8 @@
                 <div class="clearer-doubled"></div>
                 </div>
             </div>
+            </div><!--close angle bracket for #content-image div -->
+             <div id="footer-content"></div>
         </div>
     </div>
 </div>

@@ -119,6 +119,8 @@ require_once("../lang/en.php"); ?>
             </div>
         <?php } ?>
         <div id="content-wrapper">
+            <div id="content-header"></div>
+            <div id="content-image">
             <?php if($_SESSION['mobile'] == true) { ?>
                 <div class="last-menu">
                     <p class="content-menu2"><a href="index.php" title="See your settings!"><?php echo $menu_right[2]; ?></a></p>
@@ -253,8 +255,13 @@ require_once("../lang/en.php"); ?>
                 </div>
                 <div class="clearer"></div>
             </div>
-        </div>
-    </div>
+        </div><!--close angle bracket for #content-image div -->
+            <div id="footer-content"></div>
+        </div><!--close content-wrapper div -->
+
+            </div>
+
+
 </div>
 <?php
     require_once ("../php/forms.php");
