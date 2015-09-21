@@ -46,7 +46,7 @@ $menu_left[7] = "Play";
 $level[0] = "Beginner";
 $level_title[0] = "Play browser level beginner!";
 
-$level[1] = "12*12";
+$level[1] = "12 x 12";
 $level_title[1] = "Play browser level easy!";
 
 $level[2] = "Middle";
