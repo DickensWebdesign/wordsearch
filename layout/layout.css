@@ -15,8 +15,8 @@
     font-family: ProstoSansBold; src: url(../fonts/ProstoSansBold.otf), url(../fonts/prostosansbold.ttf), url(../fonts/prostosansbold.eot);
 }
 * {
-	padding:0;
-	margin:0;
+    padding:0;
+    margin:0;
 }
 strong {
     font-family: "Open Sans Bold", Veradana, sans-serif;
@@ -72,12 +72,12 @@ h3 {
     font-size: 24px;
 }
 p {
-	margin-top: 5px;
+    margin-top: 5px;
 }
 a {
-	transition-duration: 150ms;
+    transition-duration: 150ms;
     color: #FFF;
-	text-decoration: none;
+    text-decoration: none;
 }
 a:hover {
     color:gold;
@@ -218,7 +218,7 @@ td {
 .close-img , .speaker {
     position:relative;
     top:-40px;
-   width: 60px;
+    width: 60px;
     height: 80px;
     z-index: 7000;
     cursor: pointer;
@@ -303,10 +303,10 @@ input[type="image"] {
     text-align: center;
 }
 .center-auto {
-	margin-left: auto;
-	margin-right: auto;
-	width: auto;
-	height:auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height:auto;
 }
 /* game-field */
 
@@ -341,10 +341,10 @@ input[type="image"] {
 /* page head */
 #page-head{
     overflow: hidden;
-	position:relative;
-	height: 60px;
-	width: 100%;
-	z-index:7500;
+    position:relative;
+    height: 60px;
+    width: 100%;
+    z-index:7500;
     border-bottom:thin solid #EEE;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.8);
@@ -361,10 +361,10 @@ input[type="image"] {
     left: 5px;
 }
 #headline {
-	position:relative;
-	z-index:7501;
-	text-align: center;
-	padding-bottom: 5px;
+    position:relative;
+    z-index:7501;
+    text-align: center;
+    padding-bottom: 5px;
 }
 #headline span {
     color: #FFF;
@@ -408,41 +408,41 @@ input[type="image"] {
 }
 /* menu in main-layout - top-right */
 #menu-right-button {
-	opacity: 0.75;
-	transition-duration: 300ms;
-	position: fixed;
-	z-index: 10000000;
-	top: 0;
+    opacity: 0.75;
+    transition-duration: 300ms;
+    position: fixed;
+    z-index: 10000000;
+    top: 0;
     padding: 6px 6px 0 6px;
     border-bottom-left-radius: 5px;
     border-left: 2px solid #333;
     border-bottom: 2px solid #333;
-	right: 0;
-	width: 48px;
-	height: 48px;
+    right: 0;
+    width: 48px;
+    height: 48px;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.8);
 }
 #menu-right-button:hover {
     cursor: pointer;
-	opacity: 1.0;
-	transition-duration: 300ms;
-	width: 54px;
-	height: 54px;
+    opacity: 1.0;
+    transition-duration: 300ms;
+    width: 54px;
+    height: 54px;
 }
 #menu-right, #menu-left  {
-	width: 220px;
-	border-bottom-left-radius: 5px;
-	border-top-left-radius: 5px;
-	border-left: 2px solid #333;
-	font-size: 16px;
-	padding: 20px 0;
-	z-index: 5;
-	position:fixed;
-	right:-300px;
-	top:70px;
-	color: #D4D4D4 ;
-	background-color: rgb(0, 0, 0);
+    width: 220px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-left: 2px solid #333;
+    font-size: 16px;
+    padding: 20px 0;
+    z-index: 5;
+    position:fixed;
+    right:-300px;
+    top:70px;
+    color: #D4D4D4 ;
+    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.9);
 }
 /* menu left */
@@ -454,12 +454,12 @@ input[type="image"] {
     z-index:7503;
 }
 #menu-left {
-	left: -300px;
-	border-radius: 5px;
+    left: -300px;
+    border-radius: 5px;
 }
 #menu-right li, #menu-left li {
-	list-style-type: none;
-	text-transform: none;
+    list-style-type: none;
+    text-transform: none;
 }
 li > :not(a), li > div, .g-plus-padder {
     padding: 8px 15px;
@@ -555,149 +555,151 @@ ul > .green-color {
     height: auto;
 }
 .content-box ul {
-padding: 0 0 0 20px;
+    padding: 0 0 0 20px;
 
 }
 .donate form {
-width: 250px;
-margin:auto;
+    width: 250px;
+    margin:auto;
 }
 .content-header {
-padding: 0 0 10px 0;
-margin: 0;
-text-align: center;
+    padding: 0 0 10px 0;
+    margin: 0;
+    text-align: center;
 }
 .content-textlink {
-color:darkred;
+    color:darkred;
 }
 
 .content-header-ultra, .content-header-ultra-one {
-padding: 20px 0 0 0;
-margin: 0;
-text-align: left;
+    padding: 20px 0 0 0;
+    margin: 0;
+    text-align: left;
 }
 .content-header-ultra-one {
-position: relative;
-bottom: 22px;
-left:0;
-padding-top: 70px;
-padding-bottom: 29px;
-color:#000;
+    position: relative;
+    bottom: 22px;
+    left:0;
+    padding-top: 70px;
+    padding-bottom: 29px;
+    color:#000;
 }
-.content-menu, .content-menu2 {
-position:relative;
-float:right;
-right: -5px;
-bottom: 25px;
-color: #FFF;
-padding: 5px;
-background-color: rgb(33, 33, 33);
-background-color: rgba(33, 33, 33, 0.8);
-margin: 0 0 5px 0;
-clear: right;
+
+.content-menu,.content-menu2{
+    padding: 5px;
+    background-color: rgb(33, 33, 33);
+    background-color: rgba(33, 33, 33, 0.8);
+    border-radius: 8px;
+    color: #FFF;
 }
-.content-menu-footer{
-bottom: 107px;
+.content-menu {
+    position:relative;
+    text-align:center;
+    right: -14px;
+    bottom: -109px;
+    clear: both;
 }
+
 .content-menu2 {
-position: relative;
-padding: 1px 5px;
-margin: 5px 0;
+    position: relative;
+    padding: 1px 5px;
+    margin: 5px 0;
+    display: inline-block;
 
 }
 .content-menu2 a {
-clear: none;
-display:block;
+    clear: none;
+    /*display:block;*/
 }
 .content-menu2:hover {
-cursor: pointer;
+    cursor: pointer;
 }
 .content-menu a {
-font-weight: bold;
-color: #FFF;
-font-size: 16px;
-text-transform: uppercase;
-transition-duration: 150ms;
+    font-weight: bold;
+    color: #FFF;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition-duration: 150ms;
 }
 .content-menu:hover a, .content-menu2:hover a {
-color:gold;
-transition-duration: 150ms;
+    color:gold;
+    transition-duration: 150ms;
 }
 .level-desc {
-margin: 0 0 15px 0;
-padding: 5px;
-width:100%;
+    margin: 0 0 15px 0;
+    padding: 5px;
+    width:100%;
 }
 .level-desc:nth-child(2n), .level-desc2 {
-margin-top: 15px;
+    margin-top: 15px;
 }
 .level-desc > li span, #content-4 > ul ul > li span {
-width: 70%;
-float: right;
-text-align: left;
-display: inline-block;
+    width: 70%;
+    float: right;
+    text-align: left;
+    display: inline-block;
 }
 .hide-level {
-display:none;
+    display:none;
 }
 .inner-link {
-color: #F00;
-text-decoration: underline;
+    color: #F00;
+    text-decoration: underline;
 }
 .inner-link:hover {
-color: #F00;;
-text-decoration: underline;
+    color: #F00;;
+    text-decoration: underline;
 }
 .content-inner-header {
-margin: 10px 0;
-font-size: 18px;
-font-weight: 700;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 700;
 }
 .content-menu-wrapper {
-/*height: 175px;*/
+    /*height: 175px;*/
 
 }
 .content-menu a:hover {
-transition-duration: 300ms;
-color: #999999;
+    transition-duration: 300ms;
+    color: #999999;
 }
 .rules-footer {
-font-weight: 700;
-text-align: center;
+    font-weight: 700;
+    text-align: center;
 }
 .rules-entry {
-text-align:left;
-padding: 0 0 0 25px;
-font-size: 16px;
+    text-align:left;
+    padding: 0 0 0 25px;
+    font-size: 16px;
 }
 .ul-gamerules {
-padding:0;
-text-align:left;
-margin:0;
+    padding:0;
+    text-align:left;
+    margin:0;
 
 }
 .ul-gamerules > li {
-width:100%;
-line-height:2em;
-list-style-type: decimal;
-text-transform: none;
+    width:100%;
+    line-height:2em;
+    list-style-type: decimal;
+    text-transform: none;
 }
 
 
 /* Highscore layout */
 .highscore-frame, .final-state-frame {
     display:none;
-	color: black;
-	position: relative;
-	top: 30px;
-	padding: 0 10px 10px 10px;
-	border-radius: 5px;
+    color: black;
+    position: relative;
+    top: 30px;
+    padding: 0 10px 10px 10px;
+    border-radius: 5px;
     border: outset thick #DEDEEE;
-	background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0.85);
-	max-width: 600px;
-	height:auto;
-	margin: auto;
+    max-width: 600px;
+    height:auto;
+    margin: auto;
 }
 /* highscore header */
 .banderole-hs, .banderole-hs-2{
@@ -734,8 +736,8 @@ text-transform: none;
     height: 18px;
 }
 .highscore-td, .highscore-td-last {
-	width: 200px ;
-	text-align:left;
+    width: 200px ;
+    text-align:left;
     position: relative;
 }
 .td-username {
@@ -759,28 +761,28 @@ text-transform: none;
     width: 80px;
 }
 .tbl, .highscore-table-header{
-	display: none;
+    display: none;
     font-size: 16px;
-	position:relative;
+    position:relative;
 }
 
 .tbl, #tbl-0, .highscore-table-header {
-	display:block;
+    display:block;
 }
 /* final result */
 #final-result, #final-state-frame {
     display:none;
     opacity: 0;
     padding: 10px;
-	border-radius: 5px;
+    border-radius: 5px;
     border: outset thick #DEDEEE;
     background: url(../img/bg/blue-lines.jpg);
     background-size: 100% 100%;
     background-color: rgb(255, 255, 255);
-	min-width: 400px;
-	max-width: 600px;
-	height: auto;
-	margin: 20px auto 20px auto;
+    min-width: 400px;
+    max-width: 600px;
+    height: auto;
+    margin: 20px auto 20px auto;
 }
 
 .game-details, .game-details2 {
@@ -811,7 +813,7 @@ text-transform: none;
     margin: 0 0 15px 0;
 }
 .personal-highscore p {
-   clear: both;
+    clear: both;
 }
 
 .pers-high {
@@ -860,24 +862,24 @@ text-transform: none;
     margin:10px 0;
 }
 #final-result > h2 {
-	color:black;
+    color:black;
 }
 #final-result input {
-	margin: auto;
+    margin: auto;
 }
 /* game layout */
 .game-time-number {
-     float:left;
-     display:block;
-     width:22px;
+    float:left;
+    display:block;
+    width:22px;
     text-align: center;
- }
- .game-time-holder {
-     float:left;
-     display:block;
-     width:13px;
-     text-align: center;
- }
+}
+.game-time-holder {
+    float:left;
+    display:block;
+    width:13px;
+    text-align: center;
+}
 .wordheader {
     margin:10px 0 0 0;
     font-size: 17px;
@@ -1143,7 +1145,7 @@ li.green-color.indent {
 }
 /* buttons */
 #menu-left2 {
-	display:none;
+    display:none;
 }
 .menu-smaller {
     color: #9d9d9d;
@@ -1151,11 +1153,11 @@ li.green-color.indent {
 }
 
 #listMe {
-	margin: 0 auto;
+    margin: 0 auto;
 }
 .text-center {
-	margin: 0 5px;
-	text-align: center;
+    margin: 0 5px;
+    text-align: center;
 }
 /* avatar crop */
 .avatar-bg {
