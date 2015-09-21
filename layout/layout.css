@@ -601,9 +601,11 @@ ul > .green-color {
 }
 
 .content-menu2 {
+    float:right;
+    top:-5px;
     position: relative;
-    padding: 1px 5px;
-    margin: 5px 0;
+    padding: 6px 5px;
+    margin: 5px 0 0 10px;
     display: inline-block;
 
 }
