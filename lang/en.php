@@ -43,25 +43,25 @@ $menu_left[7] = "Play";
 
 
 //levels
-$level[0] = "Beginner";
+$level[0] = "Beginner <span class='menu-smaller'>10 x 10</span>";
 $level_title[0] = "Play browser level beginner!";
 
-$level[1] = "12 x 12";
+$level[1] = "Easy <span class='menu-smaller'>12 x 12</span>";
 $level_title[1] = "Play browser level easy!";
 
-$level[2] = "Middle";
+$level[2] = "Middle <span class='menu-smaller'>13 x 13</span>";
 $level_title[2] = "Play browser level middle!";
 
-$level[3] = "Hard";
+$level[3] = "Hard <span class='menu-smaller'>15 x 15</span>";
 $level_title[3] = "Play browser level hard!";
 
-$level[4] = "Expert";
+$level[4] = "Expert <span class='menu-smaller'>16 x 16</span>";
 $level_title[4] = "Play browser level expert!";
 
-$level[5] = "Master";
+$level[5] = "Master <span class='menu-smaller'>18 x 18</span>";
 $level_title[5] = "Play browser level master!";
 
-$level[6] = "Godlike";
+$level[6] = "Godlike <span class='menu-smaller'>20 x 20</span>";
 $level_title[6] = "Play browser level godlike!";
 
 

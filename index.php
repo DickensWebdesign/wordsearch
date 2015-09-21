@@ -117,7 +117,7 @@
                 <?php } else { ?>
             <!-- if we select here a value (easy, middle, hard etc... we can take this value and an use it as (imaginary) ->level puzzle: easy -->
         <!--- menu to choose puzzlesize -->
-                    <li><a href="#level-beginner-browser" class="Beginner level" title="<?php echo $level_title[0];?>">10 x 10</a></li>
+                    <li><a href="#level-beginner-browser" class="Beginner level" title="<?php echo $level_title[0];?>"><?php echo $level[0];?></a></li>
                     <li><a href="#level-easy-browser" class="Easy level" title="<?php echo $level_title[1];?>"><?php echo $level[1];?></a></li>
                     <li><a href="#level-middle-browser" class="Middle level"  title="<?php echo $level_title[2];?>"><?php echo $level[2];?></a></li>
                     <li><a href="#level-hard-browser" class="Hard level" title="<?php echo $level_title[3];?>"><?php echo $level[3];?></a></li>
