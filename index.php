@@ -215,17 +215,16 @@
                 <div class="content-holder view">
                     <?php if($_SESSION['mobile'] == false) {
                         if ($_SESSION['logged_in'] === false) { ?>
+                          <div class="content-links-wrapper">
                             <p class="content-links"><a href="#login-user" class="login opener" title="<?php echo $header_menu[9]; ?>"><?php echo $form_header[1]; ?></a></p>
                             <p class="content-links"><a href="#register-user" class="register opener" title="<?php echo $game[6]; ?>"><?php echo $form_header[3]; ?></a></p>
-                        <?php } } ?>
+                </div>
+                <?php } } ?>
                     <a id="wordsearch-game-rules"></a>
                     <div class="rules-box">
-                        <h1 class="content-header"><?php echo $game[5] .'<br>'. $game[7]; ?></h1>
+                        <h1 class="content-header"><?php echo $game[5] .' '. $game[7]; ?></h1>
                         <ul class="ul-gamerules">
-                            <div><img src="<?php echo $_SESSION['root']; ?>img/content/witch.png" alt="<?php echo  $game[7]; ?>" title="<?php echo  $game[7]; ?>" class="Rules witch" /></div>
                             <li><?php echo $game[8]; ?>
-                                <div><img src="<?php echo $_SESSION['root']; ?>img/content/devil.gif" alt="<?php echo  $game[7]; ?>" title="<?php echo  $game[7]; ?>" class="Rules devil" /></div>
-                                <div><img src="<?php echo $_SESSION['root']; ?>img/content/bird.gif" alt="<?php echo  $game[7]; ?>" title="<?php echo  $game[7]; ?>" class="Rules bird" /></div>
 
                             </li>
                             <li><?php echo $game[9]; ?></li>
