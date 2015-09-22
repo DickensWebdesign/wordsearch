@@ -588,6 +588,7 @@ ul > .green-color {
     position: relative;
     left: 400px;
     width: 150px;
+    text-align:center;
 }
 .content-links{
     width: 150px;
@@ -598,7 +599,7 @@ ul > .green-color {
     margin-bottom: 5px;
 }
 .content-menu,.content-menu2,.content-links,.solve-button{
-    padding: 5px;
+    padding: 2px;
     background-color: rgb(33, 33, 33);
     background-color: rgba(33, 33, 33, 0.8);
     border-radius: 8px;
@@ -631,7 +632,7 @@ ul > .green-color {
 .content-menu a ,.content-links a,.solve-button a{
     font-weight: bold;
     color: #FFF;
-    font-size: 16px;
+    font-size: 14px;
     text-transform: uppercase;
     transition-duration: 150ms;
 }
