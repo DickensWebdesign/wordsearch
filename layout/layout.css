@@ -584,8 +584,20 @@ ul > .green-color {
     padding-bottom: 29px;
     color:#000;
 }
-
-.content-menu,.content-menu2{
+.solve-button{
+    position: relative;
+    left: 400px;
+    width: 150px;
+}
+.content-links{
+    width: 150px;
+    text-align: center;
+    position: relative;
+    top: -55px;
+    left: -64px;
+    margin-bottom: 5px;
+}
+.content-menu,.content-menu2,.content-links,.solve-button{
     padding: 5px;
     background-color: rgb(33, 33, 33);
     background-color: rgba(33, 33, 33, 0.8);
@@ -616,14 +628,14 @@ ul > .green-color {
 .content-menu2:hover {
     cursor: pointer;
 }
-.content-menu a {
+.content-menu a ,.content-links a,.solve-button a{
     font-weight: bold;
     color: #FFF;
     font-size: 16px;
     text-transform: uppercase;
     transition-duration: 150ms;
 }
-.content-menu:hover a, .content-menu2:hover a {
+.content-menu:hover a, .content-menu2:hover a ,.content-links:hover a,.solve-button:hover a{
     color:gold;
     transition-duration: 150ms;
 }
