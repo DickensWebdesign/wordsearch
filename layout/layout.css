@@ -470,6 +470,15 @@ li > #___plusone_0 {
 #menu-right li ul li, #menu-left li ul li {
     font-size: 14px;
 }
+#menu-right > ul > li > ul > li {
+    padding-left: 5px;
+}
+#menu-right ul li:hover ul li a {
+    color: #FFF !important;
+}
+#menu-right ul li ul li a:hover {
+    color: gold !important;
+}
 #menu-right ul li a, #menu-left ul li a {
     display:block;
     width: 100%;

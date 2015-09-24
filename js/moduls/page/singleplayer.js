@@ -30,7 +30,6 @@ function Highscore(mob) {
         highscores[0] = "Easy";
         highscores[1] = "Middle";
         highscores[2] = "Hard";
-
     }
 
     this.highscoreDown = function () {
@@ -178,7 +177,7 @@ $(document).ready(function() {
     new Highscore(page.getMobile());
     page.activateHashAction();
 
-    startAnimation();
+    /* startAnimation(); */
     function startAnimation() {
         $('.content-header-ultra-one').animate({left: '90'},{easing: 'swing',duration: 5000});
         $('img.witch').fadeOut(5000, function() {
@@ -187,9 +186,7 @@ $(document).ready(function() {
                 $('img.witch').attr("src","http://www.wordsearch-game.com/img/content/witch.png");
             });
         });
-
         $('.content-header-ultra-one').animate({left:'0'},"slow",startAnimation);
-
     }
 
 });
