@@ -148,6 +148,7 @@
 				<div class="content-holder view">
 					<a id="why-should-I-solve-wordsearch"></a>
 					<h2 class="content-header"><?php echo $faq[1]; ?></h2>
+					<hr />
 					<p><?php echo $faq[2]; ?></p>
 					<ul>
 						<li><?php echo $faq[3]; ?></li>
@@ -158,7 +159,7 @@
 					<p><?php echo $faq[7]; ?></p>
 					<p><?php echo $faq[8]; ?></p>
 					<p><?php echo $faq[9]; ?></p>
-
+                    <hr />
 					<div class="content-menu-wrapper">
 						<?php if ($_SESSION['mobile'] == true) {
 							echo '<p class="content-menu"><a class="play-link" href="'. $_SESSION['root'].'">'. $faq[10] .'</a></p>';
@@ -196,7 +197,6 @@
 						<p class="content-menu"><a href="http://www.wordsearch-game.com" title="Go back to the main page to play Wordsearch Puzzle!"><?php echo $faq[14]; ?></a></p>
 					</div>
 				<?php if ($_SESSION['mobile'] == true) { ?>
-
 					<div class="last-menu">
 						<p class="content-menu2"><a href="donate-for-wordsearch" title="<?php echo $faq[32]; ?>"><?php echo $menu_bottom[9]; ?></a></p>
 						<p class="content-menu2"><a href="wordsearch-puzzle-disclaimer" title="<?php echo $donate[1]; ?>"><?php echo $menu_bottom[6]; ?></a></p>

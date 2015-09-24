@@ -77,7 +77,7 @@
 					echo ' src="'.$_SESSION['root'].'/img/logos/c-120.jpg" ';
 				}
 				echo 'title="' . $header_logo[0] . '" alt="' . $header_logo[0] . '"/></a>';?>
-			  <?php  
+			    <?php
 				if($_SESSION['mobile'] == false) {
 					echo '<span>' . $header_logo[1] . '</span>';
 				} else { ?>
@@ -141,7 +141,6 @@
                         <a href="https://plus.google.com/u/0/b/112606969232275133705/112606969232275133705/posts" title="<?php echo $gplus[0]; ?>" target="_blank">
                             <img src="<?php echo $_SESSION['root']; ?>img/icons/flat-button-google.jpg" alt="<?php echo $gplus[1]; ?>" title="<?php echo $gplus[2]; ?>" class="sharing_button" /></a>
                     </div>
-
                 <?php
                 } else { ?>
                     <ul>
@@ -196,8 +195,6 @@
 
         <div id="game-start-wrapper">
                 <h2 class="content-header-ultra-one opac"><?php echo $game[0]; ?></h2>
-
-
             <hr />
                 <p class="game-details"><?php echo $game[1]; ?><span>
                             <?php echo $_SESSION['user_name']; ?>
@@ -210,253 +207,256 @@
         <div id="content-wrapper">
             <div id="content-header"></div>
             <div id="content-image">
-            <div class="content-box">
+                <div class="content-box">
+                    <div class="content-holder view">
+                        <?php if($_SESSION['mobile'] == false) {
+                            if ($_SESSION['logged_in'] === false) { ?>
+                                <div class="content-links-wrapper">
+                                    <p class="content-links"><a href="#login-user" class="login opener" title="<?php echo $header_menu[9]; ?>"><?php echo $form_header[1]; ?></a></p>
+                                    <p class="content-links"><a href="#register-user" class="register opener" title="<?php echo $game[6]; ?>"><?php echo $form_header[3]; ?></a></p>
+                                </div>
+                                <hr />
+                    <?php } } ?>
+                        <a id="wordsearch-game-rules"></a>
+                        <div class="rules-box">
+                            <h1 class="content-header"><?php echo $game[5] .' '. $game[7]; ?></h1>
+                            <hr />
+                            <ul class="ul-gamerules">
+                                <li><?php echo $game[8]; ?>
 
-                <div class="content-holder view">
-                    <?php if($_SESSION['mobile'] == false) {
-                        if ($_SESSION['logged_in'] === false) { ?>
-                          <div class="content-links-wrapper">
-                            <p class="content-links"><a href="#login-user" class="login opener" title="<?php echo $header_menu[9]; ?>"><?php echo $form_header[1]; ?></a></p>
-                            <p class="content-links"><a href="#register-user" class="register opener" title="<?php echo $game[6]; ?>"><?php echo $form_header[3]; ?></a></p>
-                </div>
-                <?php } } ?>
-                    <a id="wordsearch-game-rules"></a>
-                    <div class="rules-box">
-                        <h1 class="content-header"><?php echo $game[5] .' '. $game[7]; ?></h1>
-                        <ul class="ul-gamerules">
-                            <li><?php echo $game[8]; ?>
-
-                            </li>
-                            <li><?php echo $game[9]; ?></li>
-                             <li><?php echo $game[10]; ?></li>
-                            <li><?php echo $game[11]; ?></li>
-                            <li><?php echo $game[12]; ?></li>
-                            <li><?php echo $game[13]; ?></li>
-                        </ul>
-                        <h3 class="content-header-ultra-one"><?php echo $game[14]; ?></h3>
-                        <div class="content-menu-wrapper">
-                            <?php
-                            $link = "browser";
-                            if($_SESSION['mobile'] === true) {
-                                $link = "mobile";
-                            } ?>
-                            <p class="content-menu content-menu-footer"><a class="content-link sec-content-<?php echo $link; ?>version" href="#wordsearch-game-and-level-description-for-<?php echo $link; ?>" title="<?php echo $game[15]; ?>"><?php echo $game[16]; ?></a></p>
-                            <p class="content-menu content-menu-footer"><a href="faqs-about-wordsearch" title="<?php echo $game[17]; ?>"><?php echo $game[18]; ?></a></p>
+                                </li>
+                                <li><?php echo $game[9]; ?></li>
+                                 <li><?php echo $game[10]; ?></li>
+                                <li><?php echo $game[11]; ?></li>
+                                <li><?php echo $game[12]; ?></li>
+                                <li><?php echo $game[13]; ?></li>
+                            </ul>
+                            <h3 class="content-header-ultra-one"><?php echo $game[14]; ?></h3>
+                            <hr />
+                            <div class="content-menu-wrapper">
+                                <?php
+                                $link = "browser";
+                                if($_SESSION['mobile'] === true) {
+                                    $link = "mobile";
+                                } ?>
+                                <p class="content-menu content-menu-footer"><a class="content-link sec-content-<?php echo $link; ?>version" href="#wordsearch-game-and-level-description-for-<?php echo $link; ?>" title="<?php echo $game[15]; ?>"><?php echo $game[16]; ?></a></p>
+                                <p class="content-menu content-menu-footer"><a href="faqs-about-wordsearch" title="<?php echo $game[17]; ?>"><?php echo $game[18]; ?></a></p>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                <div class="content-holder">
-                    <a id="wordsearch-game-and-level-description-for-browser"></a>
-                    <a id="wordsearch-game-and-level-description-for-mobile"></a>
-                    <h2 class="content-header"><?php echo $game[19]; ?></h2>
-                    <div class="hidden browserversion">
-                        <h3 class="content-header"><?php echo $game[20]; ?></h3>
-                        <p><?php echo $game[21]; ?></p>
-                        <h3 class="content-header marginer-t"><?php echo $game[22]; ?></h3>
-                        <p><?php echo $game[23]; ?><a class="rules-link inner-link" title="Go back to the game rules" href="#"><?php echo $game[7]; ?></a>.</p>
-                        <h3 class="content-header marginer-t"><?php echo $game[24]; ?></h3>
-                        <p><?php echo $game[25]; ?></p>
-                    </div>
-                    <div class="hidden mobileversion">
-                        <h3 class="content-header"><?php echo $game[26]; ?></h3>
-                        <p><?php echo $game[27]; ?></p>
-                        <h3 class="content-header marginer-t"><?php echo $game[22]; ?></h3>
-                       <p><?php echo $game[29]; ?><a class="rules-link inner-link" title="Go back to the game rules!" href="#"><?php echo $game[7]; ?></a>.</p>
-                        <h3 class="content-header marginer-t"><?php echo $game[24]; ?></h3>
-                        <p><?php echo $game[30]; ?></p>
-                    </div>
-                    <p><strong><?php echo $game[31]; ?></strong></p>
-                    <ul class="level-desc2">
-                        <li><?php echo $game[32]; ?></li>
-                        <li><?php echo $game[33]; ?></li>
-                        <li><?php echo $game[34]; ?></li>
-                    </ul>
-                    <h3 class="content-header marginer-t"><?php echo $game[35]; ?></h3>
-                    <p><?php echo $game[36]; ?></p>
-                    <ul class="level-desc2">
-                        <li><?php echo $game[37]; ?></li>
-                        <li><?php echo $game[38]; ?></li>
-                        <li><?php echo $game[39]; ?></li>
-                    </ul>
-                    <p><?php echo $game[40]; ?></p>
-                    <h3 class="content-header marginer-t"><?php echo $game[41]; ?></h3>
-                    <p><?php echo $game[42]; ?></p>
-                    <h3 class="content-header marginer-t"><?php echo $game[43]; ?></h3>
-                    <div class="content-1-in">
-                        <p><?php echo $game[44]; ?></p>
-                    </div>
-                    <div class="content-2-in">
-                        <p><?php echo $game[45]; ?></p>
-                    </div>
-                        <p><?php echo $game[46]; ?>
-                        <?php if($_SESSION['logged_in'] == false) {
-                            echo ' <a class="register opener content-textlink" title="'.$game[47].'" href="#register-user">'.$game[48].'</a> ';
-                        } else {
-                            echo $game[48];
-                        } ?>
-                            <?php echo $game[49]; ?></p>
-                    <hr />
-                    <h2 class="content-header"><?php echo $game[50]; ?></h2>
-                    <div class="content-1-in">
+                    <div class="content-holder">
+                        <a id="wordsearch-game-and-level-description-for-browser"></a>
+                        <a id="wordsearch-game-and-level-description-for-mobile"></a>
+                        <h2 class="content-header"><?php echo $game[19]; ?></h2>
+                        <hr />
                         <div class="hidden browserversion">
-                        <h3 class="content-header"><?php echo $game[51]; ?></h3>
-                        <p><?php echo $game[52]; ?></p>
-                        <ul class="level-desc">
-                            <li><?php echo $game[53]; ?><?php echo $game[61]; ?></li>
-                            <li><?php echo $game[54]; ?><?php echo $game[62]; ?></li>
-                            <li><?php echo $game[55]; ?><?php echo $game[63]; ?></li>
-                        </ul>
-                        <ul class="level-desc">
-                            <li><?php echo $game[56]; ?><?php echo $game[82]; ?></li>
-                            <li><?php echo $game[57]; ?><?php echo $game[84]; ?></li>
-                        </ul>
-                            <?php if($_SESSION['mobile'] == false) { ?>
-                            <p class="solve-button"><a class="Beginner level" href="#level-beginner-browser"><?php echo $game[58]; ?></a></p>
-                            <?php } ?>
-                        <hr />
-                        <h3 class="content-header"><?php echo $game[59]; ?></h3>
-                        <p><?php echo $game[60]; ?></p>
-                        <ul class="level-desc">
-                            <li><?php echo $game[53]; ?><?php echo $game[64]; ?></li>
-                            <li><?php echo $game[54]; ?><?php echo $game[65]; ?></li>
-                            <li><?php echo $game[55]; ?><?php echo $game[66]; ?></li>
-                        </ul>
-                        <ul class="level-desc">
-                            <li><?php echo $game[56]; ?><?php echo $game[83]; ?></li>
-                            <li><?php echo $game[57]; ?><span><?php echo $level[1]; ?></span></li>
-                        </ul>
-                        <?php if($_SESSION['mobile'] == false) { ?>
-                            <p class="solve-button"><a class="Easy level" href="#level-easy-browser"><?php echo $game[58]; ?></a></p>
-                        <?php } ?>
-                        <hr />
-                            <h3 class="content-header"><?php echo $game[85]; ?></h3>
-                            <p><?php echo $game[86]; ?></p>
-                            <ul class="level-desc">
-                                <li><?php echo $game[53]; ?><?php echo $game[67]; ?></li>
-                                <li><?php echo $game[54]; ?><?php echo $game[68]; ?></li>
-                                <li><?php echo $game[55]; ?><?php echo $game[69]; ?></li>
-                            </ul>
-                            <ul class="level-desc">
-                                <li><?php echo $game[56]; ?><span><?php echo $game[87]; ?></span></li>
-                                <li><?php echo $game[57]; ?> <span><?php echo $game[85]; ?></span></li>
-                            </ul>
-                            <?php if($_SESSION['mobile'] == false) { ?>
-                                <p class="solve-button"><a class="Middle level" href="#level-middle-browser"><?php echo $game[58]; ?></a></p>
-                            <?php } ?>
-                            <hr />
-                            <h3 class="content-header"><?php echo $game[88]; ?></h3>
-                            <p><?php echo $game[89]; ?></p>
-                            <ul class="level-desc">
-                                <li><?php echo $game[53]; ?><?php echo $game[70]; ?></li>
-                                <li><?php echo $game[54]; ?><?php echo $game[71]; ?></li>
-                                <li><?php echo $game[55]; ?><?php echo $game[72]; ?></li>
-                            </ul>
-                            <ul class="level-desc">
-                                <li><?php echo $game[56]; ?> <span><?php echo $game[91]; ?></span></li>
-                                <li><?php echo $game[57]; ?> <span><?php echo $level[3]; ?></span></li>
-                            </ul>
-                            <?php if($_SESSION['mobile'] == false) { ?>
-                            <p class="solve-button"><a class="Hard level" href="#level-hard-browser"><?php echo $game[58]; ?></a></p>
-                            <?php } ?>
-                            <hr />
-                            <h3 class="content-header"><?php echo $game[93]; ?></h3>
-                            <p><?php echo $game[92]; ?></p>
-                            <ul class="level-desc">
-                                <li><?php echo $game[53]; ?><?php echo $game[73]; ?></li>
-                                <li><?php echo $game[54]; ?><?php echo $game[74]; ?></li>
-                                <li><?php echo $game[55]; ?><?php echo $game[75]; ?></li>
-                            </ul>
-                            <ul class="level-desc">
-                                <li><?php echo $game[56]; ?> <span><?php echo $game[94]; ?></span></li>
-                                <li><?php echo $game[57]; ?> <span> <?php echo $game[95]; ?></span></li>
-                            </ul>
-                            <?php if($_SESSION['mobile'] == false) { ?>
-                            <p class="solve-button"><a class="Expert level" href="#level-expert-browser"><?php echo $game[58]; ?></a></p>
-                            <?php } ?>
-                            <hr />
-                            <h3 class="content-header"><?php echo $game[96]; ?></h3>
-                            <p><?php echo $game[97]; ?></p>
-                            <ul class="level-desc">
-                                <li><?php echo $game[53]; ?><?php echo $game[76]; ?></li>
-                                <li><?php echo $game[54]; ?> <?php echo $game[77]; ?></li>
-                                <li><?php echo $game[55]; ?> <?php echo $game[78]; ?></li>
-                            </ul>
-                            <ul class="level-desc">
-                                <li><?php echo $game[56]; ?> <span><?php echo $game[98]; ?></span></li>
-                                <li><?php echo $game[57]; ?> <span> <?php echo $game[99]; ?></span></li>
-                            </ul>
-                            <?php if($_SESSION['mobile'] == false) { ?>
-                            <p class="solve-button"><a class="Master level" href="#level-master-browser"><span class="hide-level">Master</span><?php echo $game[58]; ?></a></p>
-                            <?php } ?>
-                            <hr />
-                            <h3 class="content-header"><?php echo $game[100]; ?></h3>
-                            <p><?php echo $game[101]; ?></p>
-                            <ul class="level-desc">
-                                <li><?php echo $game[102]; ?> <?php echo $game[79]; ?></li>
-                                <li><?php echo $game[54]; ?> <?php echo $game[80]; ?></li>
-                                <li><?php echo $game[55]; ?> <?php echo $game[81]; ?></li>
-                            </ul>
-                            <ul class="level-desc">
-                                <li><?php echo $game[56]; ?> <span><?php echo $game[103]; ?></span></li>
-                                <li><?php echo $game[57]; ?> <span> <?php echo $game[104]; ?></span></li>
-                            </ul>
-                            <?php if($_SESSION['mobile'] == false) { ?>
-                            <p class="solve-button"><a class="Godlike level" href="#level-godlike-browser"><?php echo $game[58]; ?></a></p>
-                            <?php } ?>
-                            <hr />
-                                <p class="content-menu"><a class="content-link sec-content-mobileversion" href="#wordsearch-game-and-level-description-for-mobile" title="<?php echo $game[106]; ?>"><?php echo $game[107]; ?></a></p>
+                            <h3 class="content-header"><?php echo $game[20]; ?></h3>
+                            <p><?php echo $game[21]; ?></p>
+                            <h3 class="content-header marginer-t"><?php echo $game[22]; ?></h3>
+                            <p><?php echo $game[23]; ?><a class="rules-link inner-link" title="Go back to the game rules" href="#"><?php echo $game[7]; ?></a>.</p>
+                            <h3 class="content-header marginer-t"><?php echo $game[24]; ?></h3>
+                            <p><?php echo $game[25]; ?></p>
                         </div>
                         <div class="hidden mobileversion">
-                            <h3 class="content-header"><?php echo $game[59]; ?></h3>
-                            <p><?php echo $game[105]; ?></p>
+                            <h3 class="content-header"><?php echo $game[26]; ?></h3>
+                            <p><?php echo $game[27]; ?></p>
+                            <h3 class="content-header marginer-t"><?php echo $game[22]; ?></h3>
+                           <p><?php echo $game[29]; ?><a class="rules-link inner-link" title="Go back to the game rules!" href="#"><?php echo $game[7]; ?></a>.</p>
+                            <h3 class="content-header marginer-t"><?php echo $game[24]; ?></h3>
+                            <p><?php echo $game[30]; ?></p>
+                        </div>
+                        <p><strong><?php echo $game[31]; ?></strong></p>
+                        <ul class="level-desc2">
+                            <li><?php echo $game[32]; ?></li>
+                            <li><?php echo $game[33]; ?></li>
+                            <li><?php echo $game[34]; ?></li>
+                        </ul>
+                        <h3 class="content-header marginer-t"><?php echo $game[35]; ?></h3>
+                        <p><?php echo $game[36]; ?></p>
+                        <ul class="level-desc2">
+                            <li><?php echo $game[37]; ?></li>
+                            <li><?php echo $game[38]; ?></li>
+                            <li><?php echo $game[39]; ?></li>
+                        </ul>
+                        <p><?php echo $game[40]; ?></p>
+                        <h3 class="content-header marginer-t"><?php echo $game[41]; ?></h3>
+                        <p><?php echo $game[42]; ?></p>
+                        <h3 class="content-header marginer-t"><?php echo $game[43]; ?></h3>
+                        <div class="content-1-in">
+                            <p><?php echo $game[44]; ?></p>
+                        </div>
+                        <div class="content-2-in">
+                            <p><?php echo $game[45]; ?></p>
+                        </div>
+                            <p><?php echo $game[46]; ?>
+                            <?php if($_SESSION['logged_in'] == false) {
+                                echo ' <a class="register opener content-textlink" title="'.$game[47].'" href="#register-user">'.$game[48].'</a> ';
+                            } else {
+                                echo $game[48];
+                            } ?>
+                                <?php echo $game[49]; ?></p>
+                        <hr />
+                        <h2 class="content-header"><?php echo $game[50]; ?></h2>
+                        <div class="content-1-in">
+                            <div class="hidden browserversion">
+                            <h3 class="content-header"><?php echo $game[51]; ?></h3>
+                            <p><?php echo $game[52]; ?></p>
                             <ul class="level-desc">
                                 <li><?php echo $game[53]; ?><?php echo $game[61]; ?></li>
                                 <li><?php echo $game[54]; ?><?php echo $game[62]; ?></li>
                                 <li><?php echo $game[55]; ?><?php echo $game[63]; ?></li>
                             </ul>
                             <ul class="level-desc">
-                                <li><?php echo $game[56]; ?><span><?php echo $game[108]; ?></span></li>
-                                <li><?php echo $game[90]; ?><span><?php echo $game[109]; ?></span></li>
+                                <li><?php echo $game[56]; ?><?php echo $game[82]; ?></li>
                                 <li><?php echo $game[57]; ?><?php echo $game[84]; ?></li>
                             </ul>
-                            <?php if($_SESSION['mobile'] == true) { ?>
-                                <p class="content-menu"><a class="Beginner level" href="#level-beginner-mobile"><?php echo $game[58]; ?></a></p>
-                            <?php } ?>
+                                <?php if($_SESSION['mobile'] == false) { ?>
+                                <p class="solve-button"><a class="Beginner level" href="#level-beginner-browser"><?php echo $game[58]; ?></a></p>
+                                <?php } ?>
                             <hr />
-                            <h3 class="content-header"><?php echo $game[85]; ?></h3>
-                            <p><?php echo $game[110]; ?></p>
+                            <h3 class="content-header"><?php echo $game[59]; ?></h3>
+                            <p><?php echo $game[60]; ?></p>
                             <ul class="level-desc">
                                 <li><?php echo $game[53]; ?><?php echo $game[64]; ?></li>
-                                <li><?php echo $game[54]; ?> <?php echo $game[65]; ?></li>
-                                <li><?php echo $game[55]; ?> <?php echo $game[66]; ?></li>
+                                <li><?php echo $game[54]; ?><?php echo $game[65]; ?></li>
+                                <li><?php echo $game[55]; ?><?php echo $game[66]; ?></li>
                             </ul>
                             <ul class="level-desc">
-                                <li><?php echo $game[56]; ?> <span><?php echo $game[111]; ?></span></li>
-                                <li><?php echo $game[90]; ?><span><?php echo $game[112]; ?></span></li>
-                                <li><?php echo $game[57]; ?> <span><?php echo $level[2]; ?></span></li>
+                                <li><?php echo $game[56]; ?><?php echo $game[83]; ?></li>
+                                <li><?php echo $game[57]; ?><span><?php echo $mobile[1]; ?></span></li>
                             </ul>
-                            <?php if($_SESSION['mobile'] == true) { ?>
-                                <p class="content-menu"><a class="Easy level" href="#level-midle-mobile"><?php echo $game[58]; ?></a></p>
+                            <?php if($_SESSION['mobile'] == false) { ?>
+                                <p class="solve-button"><a class="Easy level" href="#level-easy-browser"><?php echo $game[58]; ?></a></p>
                             <?php } ?>
                             <hr />
-                            <h3 class="content-header"><?php echo $game[88]; ?></h3>
-                            <p><?php echo $game[113]; ?></p>
-                            <ul class="level-desc">
-                                <li><?php echo $game[53]; ?><?php echo $game[67]; ?></li>
-                                <li><?php echo $game[54]; ?> <?php echo $game[68]; ?></li>
-                                <li><?php echo $game[55]; ?> <?php echo $game[69]; ?></li>
-                            </ul>
-                            <ul class="level-desc">
-                                <li><?php echo $game[56]; ?> <span><?php echo $game[114]; ?></span></li>
-                                <li><?php echo $game[90]; ?><span><?php echo $game[115]; ?></span></li>
-                                <li><?php echo $game[57]; ?> <span><?php echo $level[3]; ?></span></li>
-                            </ul>
-                            <?php if($_SESSION['mobile'] == true) { ?>
-                            <p class="content-menu"><a class="Middle level" href="#level-hard-mobile"><?php echo $game[58]; ?></a></p>
-                            <?php } ?>
-                            <hr />
-                            <p class="content-menu"><a class="content-link sec-content-browserversion" href="#wordsearch-game-and-level-description-for-browser" title="<?php echo $game[116]; ?>"><?php echo $game[117]; ?></a></p>
-                    </div>
+                                <h3 class="content-header"><?php echo $game[85]; ?></h3>
+                                <p><?php echo $game[86]; ?></p>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[53]; ?><?php echo $game[67]; ?></li>
+                                    <li><?php echo $game[54]; ?><?php echo $game[68]; ?></li>
+                                    <li><?php echo $game[55]; ?><?php echo $game[69]; ?></li>
+                                </ul>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[56]; ?><span><?php echo $game[87]; ?></span></li>
+                                    <li><?php echo $game[57]; ?> <span><?php echo $game[85]; ?></span></li>
+                                </ul>
+                                <?php if($_SESSION['mobile'] == false) { ?>
+                                    <p class="solve-button"><a class="Middle level" href="#level-middle-browser"><?php echo $game[58]; ?></a></p>
+                                <?php } ?>
+                                <hr />
+                                <h3 class="content-header"><?php echo $game[88]; ?></h3>
+                                <p><?php echo $game[89]; ?></p>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[53]; ?><?php echo $game[70]; ?></li>
+                                    <li><?php echo $game[54]; ?><?php echo $game[71]; ?></li>
+                                    <li><?php echo $game[55]; ?><?php echo $game[72]; ?></li>
+                                </ul>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[56]; ?> <span><?php echo $game[91]; ?></span></li>
+                                    <li><?php echo $game[57]; ?> <span><?php echo $mobile[5]; ?></span></li>
+                                </ul>
+                                <?php if($_SESSION['mobile'] == false) { ?>
+                                <p class="solve-button"><a class="Hard level" href="#level-hard-browser"><?php echo $game[58]; ?></a></p>
+                                <?php } ?>
+                                <hr />
+                                <h3 class="content-header"><?php echo $game[93]; ?></h3>
+                                <p><?php echo $game[92]; ?></p>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[53]; ?><?php echo $game[73]; ?></li>
+                                    <li><?php echo $game[54]; ?><?php echo $game[74]; ?></li>
+                                    <li><?php echo $game[55]; ?><?php echo $game[75]; ?></li>
+                                </ul>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[56]; ?> <span><?php echo $game[94]; ?></span></li>
+                                    <li><?php echo $game[57]; ?> <span> <?php echo $game[95]; ?></span></li>
+                                </ul>
+                                <?php if($_SESSION['mobile'] == false) { ?>
+                                <p class="solve-button"><a class="Expert level" href="#level-expert-browser"><?php echo $game[58]; ?></a></p>
+                                <?php } ?>
+                                <hr />
+                                <h3 class="content-header"><?php echo $game[96]; ?></h3>
+                                <p><?php echo $game[97]; ?></p>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[53]; ?><?php echo $game[76]; ?></li>
+                                    <li><?php echo $game[54]; ?> <?php echo $game[77]; ?></li>
+                                    <li><?php echo $game[55]; ?> <?php echo $game[78]; ?></li>
+                                </ul>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[56]; ?> <span><?php echo $game[98]; ?></span></li>
+                                    <li><?php echo $game[57]; ?> <span> <?php echo $game[99]; ?></span></li>
+                                </ul>
+                                <?php if($_SESSION['mobile'] == false) { ?>
+                                <p class="solve-button"><a class="Master level" href="#level-master-browser"><span class="hide-level">Master</span><?php echo $game[58]; ?></a></p>
+                                <?php } ?>
+                                <hr />
+                                <h3 class="content-header"><?php echo $game[100]; ?></h3>
+                                <p><?php echo $game[101]; ?></p>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[53]; ?> <?php echo $game[79]; ?></li>
+                                    <li><?php echo $game[54]; ?> <?php echo $game[80]; ?></li>
+                                    <li><?php echo $game[55]; ?> <?php echo $game[81]; ?></li>
+                                </ul>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[56]; ?> <span><?php echo $game[103]; ?></span></li>
+                                    <li><?php echo $game[57]; ?> <span> <?php echo $game[104]; ?></span></li>
+                                </ul>
+                                <?php if($_SESSION['mobile'] == false) { ?>
+                                <p class="solve-button"><a class="Godlike level" href="#level-godlike-browser"><?php echo $game[58]; ?></a></p>
+                                <?php } ?>
+                                <hr />
+                                    <p class="content-menu"><a class="content-link sec-content-mobileversion" href="#wordsearch-game-and-level-description-for-mobile" title="<?php echo $game[106]; ?>"><?php echo $game[107]; ?></a></p>
+                            </div>
+                            <div class="hidden mobileversion">
+                                <h3 class="content-header"><?php echo $game[59]; ?></h3>
+                                <p><?php echo $game[105]; ?></p>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[53]; ?><?php echo $game[61]; ?></li>
+                                    <li><?php echo $game[54]; ?><?php echo $game[62]; ?></li>
+                                    <li><?php echo $game[55]; ?><?php echo $game[63]; ?></li>
+                                </ul>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[56]; ?><span><?php echo $game[108]; ?></span></li>
+                                    <li><?php echo $game[90]; ?><span><?php echo $game[109]; ?></span></li>
+                                    <li><?php echo $game[57]; ?><?php echo $game[84]; ?></li>
+                                </ul>
+                                <?php if($_SESSION['mobile'] == true) { ?>
+                                    <p class="content-menu"><a class="Beginner level" href="#level-beginner-mobile"><?php echo $game[58]; ?></a></p>
+                                <?php } ?>
+                                <hr />
+                                <h3 class="content-header"><?php echo $game[85]; ?></h3>
+                                <p><?php echo $game[110]; ?></p>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[53]; ?><?php echo $game[64]; ?></li>
+                                    <li><?php echo $game[54]; ?> <?php echo $game[65]; ?></li>
+                                    <li><?php echo $game[55]; ?> <?php echo $game[66]; ?></li>
+                                </ul>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[56]; ?> <span><?php echo $game[111]; ?></span></li>
+                                    <li><?php echo $game[90]; ?><span><?php echo $game[112]; ?></span></li>
+                                    <li><?php echo $game[57]; ?> <span><?php echo $level[2]; ?></span></li>
+                                </ul>
+                                <?php if($_SESSION['mobile'] == true) { ?>
+                                    <p class="content-menu"><a class="Easy level" href="#level-midle-mobile"><?php echo $game[58]; ?></a></p>
+                                <?php } ?>
+                                <hr />
+                                <h3 class="content-header"><?php echo $game[88]; ?></h3>
+                                <p><?php echo $game[113]; ?></p>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[53]; ?><?php echo $game[67]; ?></li>
+                                    <li><?php echo $game[54]; ?> <?php echo $game[68]; ?></li>
+                                    <li><?php echo $game[55]; ?> <?php echo $game[69]; ?></li>
+                                </ul>
+                                <ul class="level-desc">
+                                    <li><?php echo $game[56]; ?> <span><?php echo $game[114]; ?></span></li>
+                                    <li><?php echo $game[90]; ?><span><?php echo $game[115]; ?></span></li>
+                                    <li><?php echo $game[57]; ?> <span><?php echo $mobile[5]; ?></span></li>
+                                </ul>
+                                <?php if($_SESSION['mobile'] == true) { ?>
+                                <p class="content-menu"><a class="Middle level" href="#level-hard-mobile"><?php echo $game[58]; ?></a></p>
+                                <?php } ?>
+                                <hr />
+                                <p class="content-menu"><a class="content-link sec-content-browserversion" href="#wordsearch-game-and-level-description-for-browser" title="<?php echo $game[116]; ?>"><?php echo $game[117]; ?></a></p>
+                            </div>
                             <div class="content-menu-wrapper">
                                 <?php if ($_SESSION['mobile'] == true) {
                                 echo '<p class="content-menu"><a class="play-link" title="'.$game[118].'" href="#">'.$faq[10].'</a></p>';
@@ -464,18 +464,17 @@
                                 <p class="content-menu"><a class="content-link" href="#wordsearch-game-rules" title="<?php echo $game[119]; ?>"><?php echo $game[120]; ?></a></p>
                                 <p class="content-menu"><a href="faqs-about-wordsearch" title="<?php echo $menu_bottom[0]; ?>"><?php echo $game[18]; ?></a></p>
                             </div>
-
+                        </div>
                     </div>
-                    </div>
-                <?php if ($_SESSION['mobile'] == true) { ?>
-                    <hr />
-                    <div class="last-menu">
-                        <p class="content-menu2"><a href="donate-for-wordsearch" title="<?php echo $faq[32]; ?>"><?php echo $menu_bottom[9]; ?></a></p>
-                        <p class="content-menu2"><a href="#feedback-user" class="feedback opener" title="<?php echo $menu_bottom[2]; ?>"><?php echo $menu_bottom[3]; ?></a></p>
-                        <p class="content-menu2"><a href="wordsearch-puzzle-disclaimer" title="<?php echo $donate[1]; ?>"><?php echo $menu_bottom[6]; ?></a></p>
-                    </div>
-                <?php } ?>
-            </div>
+                    <?php if ($_SESSION['mobile'] == true) { ?>
+                        <hr />
+                        <div class="last-menu">
+                            <p class="content-menu2"><a href="donate-for-wordsearch" title="<?php echo $faq[32]; ?>"><?php echo $menu_bottom[9]; ?></a></p>
+                            <p class="content-menu2"><a href="#feedback-user" class="feedback opener" title="<?php echo $menu_bottom[2]; ?>"><?php echo $menu_bottom[3]; ?></a></p>
+                            <p class="content-menu2"><a href="wordsearch-puzzle-disclaimer" title="<?php echo $donate[1]; ?>"><?php echo $menu_bottom[6]; ?></a></p>
+                        </div>
+                    <?php } ?>
+                </div>
             </div>
             <div id="footer-content"></div>
         </div>

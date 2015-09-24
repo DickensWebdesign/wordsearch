@@ -399,7 +399,7 @@ $game[33] = "You have chosen a word not in the right order. If you have to find 
                             select the word via pressing the letters H-O-R-S-E, nothing else! Independent of the direction the word is written!";
 $game[34] = "You have chosen a doubled word. It can happen that a wordsearch is a couple of times within the puzzle. Don't worry, find the other word!";
 $game[35] = "And what is the 'punishment'?";
-$game[36] = "You did a mistake - chose a wrong letter. The mistake counter to the left of the wordsearch puzzle will increased by one!
+$game[36] = "You did a mistake - choosed a wrong letter. The mistake counter to the left of the wordsearch puzzle will increased by one!
                         At the same time the number of mistake + 1 letters will be covered by a red +! The time till the letters getting uncovered is 5 seconds + the number of mistakes.
                         You didn't understood us? Here are some examples:";
 $game[37] = "Mistakes: 1 - covered letters: 2 - timeout till available: 6 seconds";
@@ -430,43 +430,43 @@ $game[52] = "The level for Wordsearch beginner. <strong>Most played of all words
                             You have to find 12 wordsearch in this level, a 100-letter-puzzle!
                             A good choice to adjust to our wordsearch puzzle, also for player, who never played this kind of game.
                             Well, this is simple, <strong>easy manageable and fast solved</strong>. To easy for you? Choose an other level!";
-$game[53] = "Fields:";
-$game[54] = "Letters:";
-$game[55] = "Words:";
-$game[56] = "Perfect for:";
-$game[57] = "Level of difficulty:";
-$game[58] = "Solve this now";
-$game[59] = "Easy:";
+$game[53] = "<span>Fields:</span>";
+$game[54] = "<span>Letters:</span>";
+$game[55] = "<span>Words:</span>";
+$game[56] = "<span>Perfect for:</span>";
+$game[57] = "<span>Level of difficulty:</span>";
+$game[58] = "<span>Solve this now</span>";
+$game[59] = "<span>Easy:</span>";
 $game[60] = "<strong>Easy!</strong> This level is as easy as it sounds! 12 columns and 12 rows building up this wordsearch puzzle and bring a lot of fun.
                             Increased to 15 wordsearch, which have to be found in this level!
                             Not as easy as the beginner level but also fast done.
                             If you can't focus a long time or wanna <strong>play a quick game</strong>, then play this level!
                             A second round is welcome, if you have up to 3 minutes to play wordsearch puzzle. You will enjoy this 144-letter-mix!";
-$game[61] = " <span>10x10</span>";
-$game[62] = " <span>100</span>";
-$game[63] = " <span>12</span>";
-$game[64] = "<span>12x12</span>";
-$game[65] = "<span>144</span>";
-$game[66] = "<span>15</span>";
-$game[67] = "<span>13x13</span>";
-$game[68] = "<span>169</span>";
-$game[69] = "<span>16</span>";
-$game[70] = "<span>15x15</span>";
-$game[71] = "<span>225</span>";
-$game[72] = "<span>18</span>";
-$game[73] = "<span>16x16</span>";
-$game[74] = " <span>256</span>";
-$game[75] = "<span>20</span>";
-$game[76] = "<span>18x18</span>";
-$game[77] = "<span>324</span>";
-$game[78] = "<span>25</span>";
-$game[79] = "<span>20x20</span>";
-$game[80] = "<span>400</span>";
-$game[81] = "<span>30</span>";
-$game[82] = "<span>First-time-play & quick games</span>";
-$game[83] = "<span>Beginner & quick games</span>";
-$game[84] = "<span>Very Easy</span>";
-$game[85] = "Middle:";
+$game[61] = " 10x10";
+$game[62] = " 100";
+$game[63] = " 12";
+$game[64] = "12x12";
+$game[65] = "144";
+$game[66] = "15";
+$game[67] = "13x13";
+$game[68] = "169";
+$game[69] = "16";
+$game[70] = "15x15";
+$game[71] = "225";
+$game[72] = "18";
+$game[73] = "16x16";
+$game[74] = "256";
+$game[75] = "20";
+$game[76] = "18x18";
+$game[77] = "324";
+$game[78] = "25";
+$game[79] = "20x20";
+$game[80] = "400";
+$game[81] = "30";
+$game[82] = "First-time-play & quick games";
+$game[83] = "Beginner & quick games";
+$game[84] = "Very Easy";
+$game[85] = "Middle";
 $game[86] = "<strong>If you feel fine with our online wordsearch puzzle, then choose this level!</strong>
                                 Also this level is a good choice for practiced player
                                 of this game genre! Try it out and enjoy the game!

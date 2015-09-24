@@ -461,7 +461,7 @@ input[type="image"] {
     list-style-type: none;
     text-transform: none;
 }
-li > :not(a), li > div, .g-plus-padder {
+li > div, .g-plus-padder {
     padding: 8px 15px;
 }
 li > #___plusone_0 {
@@ -542,7 +542,7 @@ ul > .green-color {
 }
 /* rules */
 .content-box {
-    padding: 10px 13% 0 13%;
+    padding: 10px 13% 20px 13%;
     text-align: justify;
 
 }
@@ -555,15 +555,15 @@ ul > .green-color {
     height: auto;
 }
 .content-box ul {
-    padding: 0 0 0 20px;
-
+    float:left;
+    padding: 5px 0 0 15px;
 }
 .donate form {
     width: 250px;
     margin:auto;
 }
 .content-header {
-    padding: 0 0 10px 0;
+    padding: 20px 0 0 0;
     margin: 0;
     text-align:left;
 }
@@ -580,13 +580,12 @@ ul > .green-color {
     position: relative;
     bottom: 22px;
     left:0;
-    padding-top: 70px;
-    padding-bottom: 29px;
+    padding: 70px 0 0 0;
     color:#000;
 }
 .solve-button{
-    position: relative;
-    left: 400px;
+    float:right;
+    margin: 0 0 10px 0;
     width: 150px;
     text-align:center;
 }
@@ -613,8 +612,6 @@ ul > .green-color {
 .content-menu {
     position:relative;
     text-align:center;
-    right: -14px;
-    bottom: -113px;
     clear: both;
 }
 
@@ -645,20 +642,27 @@ ul > .green-color {
     color:gold;
     transition-duration: 150ms;
 }
-.level-desc {
+.level-desc, .level-desc2 {
     margin: 0 0 15px 0;
     padding: 5px;
     width:100%;
+
 }
 .level-desc:nth-child(2n), .level-desc2 {
     margin-top: 15px;
 }
 .level-desc > li span, #content-4 > ul ul > li span {
-    width: 70%;
-    float: right;
+    width: 200px;
     text-align: left;
-    display: inline-block;
+    display: block;
+    float:left;
 }
+.level-desc > li {
+    display: block;
+    width: 100%;
+    float: left;
+}
+
 .hide-level {
     display:none;
 }
@@ -671,12 +675,13 @@ ul > .green-color {
     text-decoration: underline;
 }
 .content-inner-header {
-    margin: 10px 0;
+    margin: 20px 0 10px 0;
     font-size: 18px;
     font-weight: 700;
+    float:left;
+    width: 100%;
 }
 .content-menu-wrapper {
-    /*height: 175px;*/
 
 }
 .content-menu a:hover {
@@ -1265,6 +1270,9 @@ li.green-color.indent {
 }
 .hidden, .content-holder {
     display: none;
+}
+.content-holder ul {
+    width:100%;
 }
 /* MODAL MODUL */
 #bwc-modal-underlay{
