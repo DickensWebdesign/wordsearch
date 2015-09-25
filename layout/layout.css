@@ -608,7 +608,7 @@ ul > .green-color {
     text-align: center;
     position: relative;
     top: -12px;
-    left: 500px;
+    left: 75%;
     margin-bottom: 5px;
 }
 .content-menu,.content-menu2,.content-links,.solve-button{
@@ -977,15 +977,16 @@ ul > .green-color {
 }
 #enemy-state-output {
     position:absolute;
-    background-color: #47a8d8;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: gold;
     z-index: 1000000;
-    width: 200px;
     height: 50px;
-    right: -10%;
-    top: 50%;
+    width: 100%;
+    border-radius: 5px;
+    border: solid thin gray;
+    bottom: -60px;;
 }
-
-
 #normal-final-menu, #ai-final-menu {
     display: none;
 }
@@ -1111,6 +1112,8 @@ ul > .green-color {
 
 li.green-color.indent {
     text-indent: 0;
+    padding: 8px 15px;
+    display: block;
 }
 
 .highscore-ingame-box {
@@ -1232,6 +1235,9 @@ li.green-color.indent {
     background-size: 100% 100%;
     background-color: rgb(255, 255, 255);
     border: outset thick #DEDEEE;
+}
+#game-start-wrapper h2 {
+    text-align: center;
 }
 #second-level {
     text-align: center;

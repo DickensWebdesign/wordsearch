@@ -295,7 +295,9 @@ function Page() {
                 // levelAI --> difficulty of AI (easy, middle, hard)
                 gm = new Game(gameId, levelId, levelAI, mobile);
             } else {
+                gm.setAILevel(levelAI);
                 gm.setLevel(levelId);
+                gm.setGame(gameId);
                 gm.initGame();
             }
             e.stopPropagation();

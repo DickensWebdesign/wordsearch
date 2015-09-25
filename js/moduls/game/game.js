@@ -58,6 +58,14 @@ function Game(game, level, levelA, mob) {
         }
     });
 
+    this.setAILevel = function(levelA) {
+        levelAI = levelA;
+    };
+
+    this.setGame = function(gamesID) {
+        game = gamesID
+    }
+
     this.setTouchOut = function(){
         var timeout = 100;
         setTimeout(function() {
@@ -178,6 +186,10 @@ function Game(game, level, levelA, mob) {
         levelArray['Master'] = 10000;
         levelArray['Godlike'] = 12000;
 
+        this.resetVars = function(newVar) {
+
+        }
+
 
         var wordCount = 0;
 
@@ -247,6 +259,7 @@ function Game(game, level, levelA, mob) {
                     }
                 } else {
                     AITimeouter = null;
+                    AITimeout = null;
                     return false;
                 }
             }, AITimeout);
@@ -327,6 +340,9 @@ function Game(game, level, levelA, mob) {
 
     //// GAME ENGINE
     this.initGame = function() {
+        if(aI != null) {
+            ai.resetVars();
+        }
         setTimeout(function() {
             if(mobile == "1") {
                 selector = ":first";
@@ -417,6 +433,9 @@ function Game(game, level, levelA, mob) {
 
     $(document).on("click" || "touchstart ", ".close-game", function (e) {
         e.preventDefault();
+        if(ai != null) {
+            ai.stopAI();
+        }
         if(touched == false) {
             touched = true;
             self.setTouchOut(100);
@@ -427,6 +446,9 @@ function Game(game, level, levelA, mob) {
             var pos = "-10px";
             switch (action) {
                 case "restart":
+                    if(ai != null) {
+                        ai.stopAI();
+                    }
                     self.initGame();
                     break;
                 case "front":
